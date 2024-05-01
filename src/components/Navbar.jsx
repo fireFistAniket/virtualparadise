@@ -9,7 +9,7 @@ const Navbar = () => {
         <img
           width={450}
           height={200}
-          src='/virtualparadise/logo.png'
+          src='/logo.png'
           alt='logo'
           loading='lazy'
           className='max-w-[5vmax]'

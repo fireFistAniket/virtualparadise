@@ -3,7 +3,7 @@ import React from "react";
 const Events = () => {
   return (
     <main className="min-h-[80vmin] flex flex-col gap-[5vmin]">
-      <div className="bg-[url('/virtualparadise/events-header-bg.png')] bg-cover bg-center bg-no-repeat flex items-center justify-center min-h-[50vmin]">
+      <div className="bg-[url('/events-header-bg.png')] bg-cover bg-center bg-no-repeat flex items-center justify-center min-h-[50vmin]">
         <div className="flex flex-col items-center justify-center gap-[2vmin] bg-black bg-opacity-60 px-[2vmax] py-[2vmin]">
           <h1 className="text-[2.5vmax] font-bold text-neutral-100">
             Game launch &amp; esports evnts

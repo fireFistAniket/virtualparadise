@@ -7,7 +7,7 @@ dotenv.config();
 // Constants
 const isProduction = process.env.NODE_ENV === "production";
 const port = process.env.PORT || 5173;
-const base = process.env.BASE || "/virtualparadise";
+const base = process.env.BASE || "/";
 
 // Cached production assets
 const templateHtml = isProduction
@@ -41,7 +41,6 @@ if (!isProduction) {
 app.post("/api/:prefix", async (req, res) => {
   const prefix = req.params.prefix;
   const url = `https://api.igdb.com/v4/${prefix}`;
-  console.log(req.body);
   request({
     url: url,
     method: "POST",
@@ -58,8 +57,7 @@ app.post("/api/:prefix", async (req, res) => {
 // Serve HTML
 app.use("*", async (req, res) => {
   try {
-    const url = req.originalUrl.replace(base, "");
-
+    const url = req.originalUrl;
     let template;
     let render;
     if (!isProduction) {
@@ -69,7 +67,7 @@ app.use("*", async (req, res) => {
       render = (await vite.ssrLoadModule("/src/entry-server.jsx")).render;
     } else {
       template = templateHtml;
-      render = (await import("./dist/server/entry-server.js")).render;
+      render = (await import("./dist/server/entry-server.js")).render(url);
     }
 
     const rendered = await render(url, ssrManifest);

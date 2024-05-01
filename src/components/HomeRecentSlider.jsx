@@ -1,5 +1,3 @@
-"use client";
-import Image from "next/image";
 import React, { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
@@ -24,8 +22,10 @@ const HomeRecentSlider = ({ games }) => {
         >
           {games?.map((item, index) => (
             <div key={index} className="flex flex-col items-center relative">
-              <Image
-                src={`${process.env.NEXT_PUBLIC_IMAGE_URI}/${item.cover.image_id}.jpg`}
+              <img
+                src={`${import.meta.env.VITE_IMAGE_URI}/${
+                  item.cover.image_id
+                }.jpg`}
                 alt="game cover"
                 width={500}
                 height={500}
@@ -34,15 +34,6 @@ const HomeRecentSlider = ({ games }) => {
               <p className="text-[1.5vmax] font-bold absolute bottom-0 bg-black bg-opacity-50 text-neutral-100 text-center w-full">
                 {item.name}
               </p>
-              <div className="absolute top-0 right-0">
-                <Image
-                  src={`${process.env.NEXT_PUBLIC_IMAGE_URI}/${item.platforms[0].platform_logo.image_id}.png`}
-                  alt="platform_logo"
-                  width={200}
-                  height={200}
-                  className="max-w-[7vmax]"
-                />
-              </div>
             </div>
           ))}
         </div>
