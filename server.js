@@ -1,12 +1,13 @@
-
+import dotenv from "dotenv";
 import fs from "node:fs/promises";
 import express from "express";
 import request from "request";
 
+dotenv.config();
 // Constants
 const isProduction = process.env.NODE_ENV === "production";
 const port = process.env.PORT || 5173;
-const base = process.env.BASE || "/";
+const base = process.env.BASE || "/virtualparadise";
 
 // Cached production assets
 const templateHtml = isProduction
@@ -38,7 +39,6 @@ if (!isProduction) {
 }
 
 app.post("/api/:prefix", (req, res) => {
-  console.log(process.env.VITE_SERVER_CLIENT_ID);
   const prefix = req.params.prefix;
   const url = `https://api.igdb.com/v4/${prefix}`;
   request({

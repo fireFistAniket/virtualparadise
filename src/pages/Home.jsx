@@ -6,7 +6,7 @@ import { GrLike } from "react-icons/gr";
 const Home = () => {
   return (
     <main className="flex flex-col items-center justify-center gap-[5vmax] my-[2vmin]">
-      <div className="bg-[url('/virtualparadise/header-bg.png')] bg-cover bg-no-repeat bg-center min-h-[70vmin] flex items-center justify-center w-full">
+      <div className="bg-[url('/header-bg.png')] bg-cover bg-no-repeat bg-center min-h-[70vmin] flex items-center justify-center w-full">
         <div className="flex flex-col items-center justify-center px-[1vmax] py-[1vmin] gap-[2vmax] bg-black bg-opacity-20 rounded-2xl">
           <h1 className="text-[2.5vmax] font-bold text-neutral-100">
             VirtualParadise
@@ -126,7 +126,7 @@ const Home = () => {
                 className="rounded-xl overflow-hidden shadow-lg shadow-neutral-100 relative"
               >
                 <img
-                  src={`${process.env.NEXT_PUBLIC_IMAGE_URI}/${item.cover.image_id}.jpg`}
+                  src={`${import.meta.env.VITE_IMAGE_URI}/${item.cover.image_id}.jpg`}
                   alt="game-cover"
                   width={1920}
                   height={1080}
@@ -169,7 +169,7 @@ const Home = () => {
               cumque sequi! Eum, vero velit.
             </p>
             <img
-              src={`${process.env.NEXT_PUBLIC_IMAGE_URI}/iurhmhenrrsdnsc4zbva.png`}
+              src={`${import.meta.env.VITE_IMAGE_URI}/iurhmhenrrsdnsc4zbva.png`}
               alt="Lara Croft"
               width={1920}
               height={1080}
@@ -178,7 +178,7 @@ const Home = () => {
           </div>
           <div className="flex flex-col items-center justify-center gap-[2vmin]">
             <img
-              src={`${process.env.NEXT_PUBLIC_IMAGE_URI}/bnzwhwclosyep4ligivs.png`}
+              src={`${import.meta.env.VITE_IMAGE_URI}/bnzwhwclosyep4ligivs.png`}
               alt="Lara Croft"
               width={1920}
               height={1080}
