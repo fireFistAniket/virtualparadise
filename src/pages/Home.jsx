@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { MdEventAvailable, MdOutlineDoNotDisturbOff } from "react-icons/md";
 import { PiHandsPrayingBold } from "react-icons/pi";
 import { GrLike } from "react-icons/gr";
+import Loader from "../components/Loader";
 
 const Home = () => {
+  const [recentGames, setRecentGames] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  if (isLoading) {
+    return <Loader />;
+  }
   return (
     <main className='flex flex-col items-center justify-center gap-[5vmax] my-[2vmin]'>
       <div className="bg-[url('/virtualparadise/header-bg.png')] bg-cover bg-no-repeat bg-center min-h-[70vmin] flex items-center justify-center w-full">

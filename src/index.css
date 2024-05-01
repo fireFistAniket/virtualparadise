@@ -25,3 +25,32 @@ body {
   background-repeat: no-repeat;
   background-size: 100%;
 }
+
+.loader {
+  width: 15vmax;
+  aspect-ratio: 1;
+  --c: no-repeat radial-gradient(farthest-side, #3121a6 92%, #d71f1f00);
+  background: var(--c) 50% 0, var(--c) 50% 100%, var(--c) 100% 50%,
+    var(--c) 0 50%;
+  background-size: 1.3vmax 1.3vmax;
+  animation: l18 1s infinite;
+  position: relative;
+}
+.loader::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: 1vmin;
+  background: repeating-conic-gradient(#0f07ea00 0 35deg, #05c3e0 0 90deg);
+  -webkit-mask: radial-gradient(
+    farthest-side,
+    #00000000 calc(100% - 3px),
+    #000000 0
+  );
+  border-radius: 50%;
+}
+@keyframes l18 {
+  100% {
+    transform: rotate(0.5turn);
+  }
+}
