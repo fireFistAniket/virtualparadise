@@ -13,7 +13,7 @@ const Footer = () => {
             <img
               width={450}
               height={200}
-              src='/logo.png'
+              src='/virtualparadise/logo.png'
               alt='logo'
               loading='lazy'
               className='max-w-[4vmax]'
@@ -64,7 +64,7 @@ const Footer = () => {
         </li>
         <li>
           <img
-            src='/instagram-icon-footer.png'
+            src='/virtualparadise/instagram-icon-footer.png'
             alt='intagram'
             width={200}
             height={50}
@@ -73,7 +73,7 @@ const Footer = () => {
         </li>
         <li>
           <img
-            src='/linkedin-icon-footer.png'
+            src='/virtualparadise/linkedin-icon-footer.png'
             alt='linkedin'
             width={200}
             height={50}
@@ -82,7 +82,7 @@ const Footer = () => {
         </li>
         <li>
           <img
-            src='/pinterest-icon-footer.png'
+            src='/virtualparadise/pinterest-icon-footer.png'
             alt='pinterest'
             width={200}
             height={50}
@@ -91,7 +91,7 @@ const Footer = () => {
         </li>
         <li>
           <img
-            src='/english-icon-footer.png'
+            src='/virtualparadise/english-icon-footer.png'
             alt='english'
             width={200}
             height={50}

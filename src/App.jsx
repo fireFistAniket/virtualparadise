@@ -3,6 +3,8 @@ import reactLogo from "./assets/react.svg";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
+import Events from "./pages/Events";
+import Footer from "./components/Footer";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -21,7 +23,9 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' Component={Home} />
+        <Route path='/events' Component={Events} />
       </Routes>
+      <Footer />
     </>
   );
 }
