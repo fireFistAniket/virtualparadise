@@ -8,20 +8,20 @@ export default defineConfig(({ command, mode }) => {
   return {
     plugins: [react()],
     base: "/virtualparadise/",
-    server: {
-      cors: false,
-      proxy: {
-        "/api": {
-          target: "https://api.igdb.com/v4",
-          changeOrigin: true,
-          secure: false,
-          rewrite: (path) => path.replace(/^\/api/, ""),
-          headers: {
-            "Client-ID": env.VITE_SERVER_CLIENT_ID,
-            Authorization: `Bearer ${env.VITE_SERVER_ACCESS_TOKEN}`,
-          },
-        },
-      },
-    },
+    // server: {
+    //   cors: false,
+    //   proxy: {
+    //     "/api": {
+    //       target: "https://api.igdb.com/v4",
+    //       changeOrigin: true,
+    //       secure: false,
+    //       rewrite: (path) => path.replace(/^\/api/, ""),
+    //       headers: {
+    //         "Client-ID": env.VITE_SERVER_CLIENT_ID,
+    //         Authorization: `Bearer ${env.VITE_SERVER_ACCESS_TOKEN}`,
+    //       },
+    //     },
+    //   },
+    // },
   };
 });
