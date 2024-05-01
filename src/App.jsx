@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import reactLogo from "./assets/react.svg";
+import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
@@ -7,7 +6,6 @@ import Events from "./pages/Events";
 import Footer from "./components/Footer";
 
 function App() {
-  const [count, setCount] = useState(0);
   // useEffect(() => {
   //   fetch("/api/games", {
   //     method: "POST",

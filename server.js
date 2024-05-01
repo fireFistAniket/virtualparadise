@@ -17,10 +17,6 @@ const ssrManifest = isProduction
   ? await fs.readFile("./dist/client/.vite/ssr-manifest.json", "utf-8")
   : undefined;
 
-const getAssetPath = (path) => {
-  return isProduction ? `${base}${path}` : path;
-};
-
 // Create http server
 const app = express();
 
@@ -42,9 +38,10 @@ if (!isProduction) {
   app.use(base, sirv("./dist/client", { extensions: [] }));
 }
 
-app.post("/api/:prefix", (req, res) => {
+app.post("/api/:prefix", async (req, res) => {
   const prefix = req.params.prefix;
   const url = `https://api.igdb.com/v4/${prefix}`;
+  console.log(req.body);
   request({
     url: url,
     method: "POST",

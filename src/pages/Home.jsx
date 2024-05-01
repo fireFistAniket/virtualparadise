@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { MdEventAvailable, MdOutlineDoNotDisturbOff } from "react-icons/md";
 import { PiHandsPrayingBold } from "react-icons/pi";
 import { GrLike } from "react-icons/gr";
@@ -7,6 +7,25 @@ import Loader from "../components/Loader";
 const Home = () => {
   const [recentGames, setRecentGames] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+
+  const getRecentGames = async () => {
+    try {
+      const res = await fetch("/api/games", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ query: "fields *; limit 12;" }),
+      });
+      const data = await res.json();
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getRecentGames();
+  }, []);
+
   if (isLoading) {
     return <Loader />;
   }
