@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-const HomeRecentSlider = ({ games }) => {
+const HomeRecentSlider = ({ games , base }) => {
   const [translateX, setTranslateX] = useState(0);
   const handelTransition = (pos) => {
     if (translateX < 0 && translateX >= 100) {

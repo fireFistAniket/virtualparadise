@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const base = process.env.NODE_ENV === "production" ? "/virtualparadise" : "";
   return (
     <footer className='flex flex-col gap-[4vmin] px-[3vmax] py-[3vmin] bg-[linear-gradient(270deg,_rgba(52,_7,_99,_1)_0%,_rgba(41,_38,_142,_1)_33%,_rgba(26,_17,_136,_1)_65%,_rgba(1,_61,_136,_1)_100%)]'>
       <div className='flex items-center justify-between'>
@@ -13,7 +14,7 @@ const Footer = () => {
             <img
               width={450}
               height={200}
-              src='/logo.png'
+              src={`${base}/logo.png`}
               alt='logo'
               loading='lazy'
               className='max-w-[4vmax]'
@@ -64,7 +65,7 @@ const Footer = () => {
         </li>
         <li>
           <img
-            src='/instagram-icon-footer.png'
+            src={`${base}/instagram-icon-footer.png`}
             alt='intagram'
             width={200}
             height={50}
@@ -73,7 +74,7 @@ const Footer = () => {
         </li>
         <li>
           <img
-            src='/linkedin-icon-footer.png'
+            src={`${base}/linkedin-icon-footer.png`}
             alt='linkedin'
             width={200}
             height={50}
@@ -82,7 +83,7 @@ const Footer = () => {
         </li>
         <li>
           <img
-            src='/pinterest-icon-footer.png'
+            src={`${base}/pinterest-icon-footer.png`}
             alt='pinterest'
             width={200}
             height={50}
@@ -91,7 +92,7 @@ const Footer = () => {
         </li>
         <li>
           <img
-            src='/english-icon-footer.png'
+            src={`${base}/english-icon-footer.png`}
             alt='english'
             width={200}
             height={50}
