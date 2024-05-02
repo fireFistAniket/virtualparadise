@@ -16,6 +16,15 @@ const Home = () => {
     "fields *, cover.*; where first_release_date >= 1640995200 & first_release_date < 1672531199;"
   );
 
+  const {
+    data: mobaGames,
+    error: mobaGamesError,
+    loading: mobaGamesLoading,
+  } = useFetch(
+    "/api/games",
+    "fields *, cover.*; where genres = 36 & cover.height > 500; sort cover asc; limit 8;"
+  );
+
   return (
     <main className="flex flex-col items-center justify-center gap-[5vmax] my-[2vmin]">
       <div className="bg-[url('/header-bg.png')] bg-cover bg-no-repeat bg-center min-h-[70vmin] flex items-center justify-center w-full">
@@ -134,15 +143,19 @@ const Home = () => {
         </button>
       </div>
       <div className="flex mx-[3vmax] gap-[1.8vmax]">
-        {/* <div className="grid grid-cols-2 items-center justify-items-center gap-[5vmin]">
-          {mobaGames &&
+        <div className="grid grid-cols-2 items-center justify-items-center gap-[5vmin]">
+          {mobaGamesLoading ? (
+            <Loader />
+          ) : (
             mobaGames?.map((item, index) => (
               <div
                 key={index}
                 className="rounded-xl overflow-hidden shadow-lg shadow-neutral-100 relative"
               >
                 <img
-                  src={`${import.meta.env.VITE_IMAGE_URI}/${item.cover.image_id}.jpg`}
+                  src={`${import.meta.env.VITE_IMAGE_URI}/${
+                    item.cover?.image_id
+                  }.jpg`}
                   alt="game-cover"
                   width={1920}
                   height={1080}
@@ -152,8 +165,9 @@ const Home = () => {
                   {item.name}
                 </p>
               </div>
-            ))}
-        </div> */}
+            ))
+          )}
+        </div>
         <div className="flex flex-col gap-[1.7vmax] items-start justify-around max-w-[50vmax]">
           <h2 className="text-[2vmax] font-bold text-neutral-100">
             A large number of games based on your perticular choice
