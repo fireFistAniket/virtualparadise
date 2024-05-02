@@ -6,7 +6,7 @@ import App from "./App";
 export function render(req) {
   const html = ReactDOMServer.renderToString(
     <React.StrictMode>
-      <StaticRouter location={req} basename="/virtualparadise">
+      <StaticRouter location={req}>
         <App />
       </StaticRouter>
     </React.StrictMode>

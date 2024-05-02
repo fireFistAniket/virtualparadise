@@ -3,14 +3,13 @@ import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const base = process.env.NODE_ENV === "production" ? "/virtualparadise" : "";
   return (
     <nav className='flex items-center justify-between mx-[2vmax] my-[2vmin]'>
       <Link to='/' className='flex items-center justify-center gap-[0.8vmax]'>
         <img
           width={450}
           height={200}
-          src={`${base}/logo.png`}
+          src={`/logo.png`}
           alt='logo'
           loading='lazy'
           className='max-w-[5vmax]'

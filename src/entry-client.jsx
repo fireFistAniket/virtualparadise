@@ -7,7 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 ReactDOM.hydrateRoot(
   document.getElementById("root"),
   <React.StrictMode>
-    <BrowserRouter basename='/virtualparadise'>
+    <BrowserRouter>
       <App />
     </BrowserRouter>
   </React.StrictMode>

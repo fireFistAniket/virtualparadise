@@ -7,13 +7,12 @@ import HomeRecentSlider from "../components/HomeRecentSlider";
 import useFetch from "../hooks/useFetch";
 
 const Home = () => {
-  const base = process.env.NODE_ENV === "production" ? "/virtualparadise" : "";
   const {
     data: recentGames,
     error: recentGamesError,
     loading: recentGamesLoading,
   } = useFetch(
-    `${base}/api/games`,
+    `/api/games`,
     "fields *, cover.*; where first_release_date >= 1640995200 & first_release_date < 1672531199;"
   );
 
@@ -22,7 +21,7 @@ const Home = () => {
     error: mobaGamesError,
     loading: mobaGamesLoading,
   } = useFetch(
-    `${base}/api/games`,
+    `/api/games`,
     "fields *, cover.*; where genres = 36 & cover.height > 500; sort cover asc; limit 8;"
   );
 
@@ -57,7 +56,7 @@ const Home = () => {
         {recentGamesLoading ? (
           <Loader />
         ) : (
-          <HomeRecentSlider games={recentGames} base={base} />
+          <HomeRecentSlider games={recentGames} />
         )}
       </div>
       <div className='flex flex-col items-center justify-center gap-[1.4vmin]'>
@@ -95,7 +94,7 @@ const Home = () => {
           </div>
           <div>
             <img
-              src={`${base}/about0us-showcase.png`}
+              src={`/about0us-showcase.png`}
               alt='about-us'
               width={600}
               height={400}

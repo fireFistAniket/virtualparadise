@@ -4,13 +4,12 @@ import { Link } from "react-router-dom";
 import Loader from "../components/Loader";
 
 const Events = () => {
-  const base = process.env.NODE_ENV === "production" ? "/virtualparadise" : "";
   const {
     data: events,
     error: eventsError,
     loading: eventsLoading,
   } = useFetch(
-    `${base}/api/events`,
+    `/api/events`,
     "fields *, games.*, videos.*, event_logo.*, games.cover.*; sort event_logo asc;"
   );
   return (
