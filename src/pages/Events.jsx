@@ -1,6 +1,17 @@
 import React from "react";
+import useFetch from "../hooks/useFetch";
+import { Link } from "react-router-dom";
+import Loader from "../components/Loader";
 
 const Events = () => {
+  const {
+    data: events,
+    error: eventsError,
+    loading: eventsLoading,
+  } = useFetch(
+    "/api/events",
+    "fields *, games.*, videos.*, event_logo.*, games.cover.*; sort event_logo asc;"
+  );
   return (
     <main className="min-h-[80vmin] flex flex-col gap-[5vmin]">
       <div className="bg-[url('/events-header-bg.png')] bg-cover bg-center bg-no-repeat flex items-center justify-center min-h-[50vmin]">
@@ -19,16 +30,20 @@ const Events = () => {
           </button>
         </div>
       </div>
-      {/* <div className="flex items-center flex-wrap gap-[1.5vmax] justify-center">
-        {events &&
-          events.map((item) => (
+      <div className="flex items-center flex-wrap gap-[1.5vmax] justify-center">
+        {eventsLoading ? (
+          <Loader />
+        ) : (
+          events?.map((item) => (
             <Link
-              href={`/events/${item.id}`}
+              to={`/events/${item.id}`}
               key={item.id}
               className="flex flex-col items-center mx-[3vmax]"
             >
               <img
-                src={`${process.env.NEXT_PUBLIC_IMAGE_URI}/${item.event_logo.image_id}.jpg`}
+                src={`${import.meta.env.VITE_IMAGE_URI}/${
+                  item.event_logo?.image_id
+                }.jpg`}
                 alt="event-cover"
                 width={450}
                 height={175}
@@ -37,8 +52,9 @@ const Events = () => {
                 {item.name}
               </h1>
             </Link>
-          ))}
-      </div> */}
+          ))
+        )}
+      </div>
     </main>
   );
 };

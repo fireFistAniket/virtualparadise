@@ -57,15 +57,17 @@ app.post("/api/:prefix", async (req, res) => {
 // Serve HTML
 app.use("*", async (req, res) => {
   try {
-    const url = req.originalUrl;
+    let url;
     let template;
     let render;
     if (!isProduction) {
       // Always read fresh template in development
+      url = req.originalUrl;
       template = await fs.readFile("./index.html", "utf-8");
       template = await vite.transformIndexHtml(url, template);
       render = (await vite.ssrLoadModule("/src/entry-server.jsx")).render;
     } else {
+      url = req.originalUrl.replace(base, "");
       template = templateHtml;
       render = (await import("./dist/server/entry-server.js")).render(url);
     }
