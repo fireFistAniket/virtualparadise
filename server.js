@@ -7,7 +7,7 @@ dotenv.config();
 // Constants
 const isProduction = process.env.NODE_ENV === "production";
 const port = process.env.PORT || 5173;
-const base = process.env.BASE || "/";
+const base = process.env.BASE || "/virtualparadise";
 
 // Cached production assets
 const templateHtml = isProduction
@@ -38,7 +38,7 @@ if (!isProduction) {
   app.use(base, sirv("./dist/client", { extensions: [] }));
 }
 
-app.post("/api/:prefix", async (req, res) => {
+app.post("*/api/:prefix", async (req, res) => {
   const prefix = req.params.prefix;
   const url = `https://api.igdb.com/v4/${prefix}`;
   request({
@@ -57,19 +57,17 @@ app.post("/api/:prefix", async (req, res) => {
 // Serve HTML
 app.use("*", async (req, res) => {
   try {
-    let url;
+    let url = req.originalUrl.replace(base, "");
     let template;
     let render;
     if (!isProduction) {
       // Always read fresh template in development
-      url = req.originalUrl;
       template = await fs.readFile("./index.html", "utf-8");
       template = await vite.transformIndexHtml(url, template);
       render = (await vite.ssrLoadModule("/src/entry-server.jsx")).render;
     } else {
-      url = req.originalUrl.replace(base, "");
       template = templateHtml;
-      render = (await import("./dist/server/entry-server.js")).render(url);
+      render = (await import("./dist/server/entry-server.js")).render;
     }
 
     const rendered = await render(url, ssrManifest);

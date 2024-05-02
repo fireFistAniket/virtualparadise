@@ -8,7 +8,6 @@ import useFetch from "../hooks/useFetch";
 
 const Home = () => {
   const base = process.env.NODE_ENV === "production" ? "/virtualparadise" : "";
-  console.log(base);
   const {
     data: recentGames,
     error: recentGamesError,
