@@ -23,7 +23,7 @@ const Navbar = () => {
           <Link to='/artworks'>artworks</Link>
         </li>
         <li className='text-[1.8vmax] font-semibold text-neutral-100 capitalize'>
-          colletions
+          compaines
         </li>
         <li className='text-[1.8vmax] font-semibold text-neutral-100 capitalize'>
           <Link to='/events'>events</Link>
