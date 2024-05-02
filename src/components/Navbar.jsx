@@ -20,7 +20,7 @@ const Navbar = () => {
       </Link>
       <ul className='flex items-center gap-[1.9vmax] '>
         <li className='text-[1.8vmax] font-semibold text-neutral-100 capitalize'>
-          artworks
+          <Link to='/artworks'>artworks</Link>
         </li>
         <li className='text-[1.8vmax] font-semibold text-neutral-100 capitalize'>
           colletions

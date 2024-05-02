@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { MdEventAvailable, MdOutlineDoNotDisturbOff } from "react-icons/md";
 import { PiHandsPrayingBold } from "react-icons/pi";
 import { GrLike } from "react-icons/gr";
