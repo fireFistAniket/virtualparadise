@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Texturina:opsz,wght@12..72,100..900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -24,6 +26,34 @@ body {
   );
   background-repeat: no-repeat;
   background-size: 100%;
+  font-family: "Texturina", serif;
+  font-optical-sizing: auto;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: linear-gradient(
+    180deg,
+    rgba(52, 7, 99, 1) 0%,
+    rgba(41, 38, 142, 1) 33%,
+    rgba(26, 17, 136, 1) 65%,
+    rgba(1, 61, 136, 1) 100%
+  );
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 1.5vmax;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 .loader {
