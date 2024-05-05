@@ -7,5 +7,5 @@
       "use": "@vercel/static-build"
     }
   ],
-  "rewrites": [{ "source": "/(.*)", "destination": "/server.js" }]
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }
