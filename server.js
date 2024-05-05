@@ -2,6 +2,10 @@ import dotenv from "dotenv";
 import fs from "node:fs/promises";
 import express from "express";
 import request from "request";
+import { createServer } from "node:http";
+import pkg from "@vercel/node";
+
+const { VercelRequest, VercelResponse } = pkg;
 
 dotenv.config();
 // Constants
@@ -88,3 +92,8 @@ app.use("*", async (req, res) => {
 app.listen(port, () => {
   console.log(`Server started at http://localhost:${port}`);
 });
+
+export default (req, res) => {
+  const server = app(VercelRequest, VercelResponse);
+  return server;
+};
