@@ -89,20 +89,10 @@ app.use("*", async (req, res) => {
 });
 
 // Start http server
+app.listen(port, () => {
+  console.log(`Server started at http://localhost:${port}`);
+});
 
-if (isProduction) {
-  createServer().then(({ app }) => {
-    app.listen(port, () => {
-      console.log(`Server running on http://localhost:${port}`);
-    });
-  });
-} else {
-  app.listen(port, () => {
-    console.log(`Server started at http://localhost:${port}`);
-  });
-}
-
-export default app;
 
 // export default (req, res) => {
 //   const server = app(VercelRequest, VercelResponse);
