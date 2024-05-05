@@ -2,10 +2,6 @@ import dotenv from "dotenv";
 import fs from "node:fs/promises";
 import express from "express";
 import request from "request";
-import { createServer } from "node:http";
-import pkg from "@vercel/node";
-
-const { VercelRequest, VercelResponse } = pkg;
 
 dotenv.config();
 // Constants
