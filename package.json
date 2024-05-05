@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon server",
-    "build": "vite build --ssrManifest --outDir dist/client && vite build --ssr src/entry-server.jsx --outDir dist/server",
+    "build": "vite build --ssrManifest --outDir ./dist/client && vite build --ssr src/entry-server.jsx --outDir ./dist/server",
     "start": "cross-env NODE_ENV=production node server"
   },
   "dependencies": {
