@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon server",
     "build": "vite build --ssrManifest --outDir dist/client && vite build --ssr src/entry-server.jsx --outDir dist/server",
-    "serve": "cross-env NODE_ENV=production node server"
+    "start": "cross-env NODE_ENV=production node server"
   },
   "dependencies": {
     "compression": "^1.7.4",

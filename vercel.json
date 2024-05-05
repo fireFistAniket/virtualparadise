@@ -2,11 +2,19 @@
   "version": 2,
   "builds": [
     {
-      "src": "server.js",
-      "use": "@vercel/node"
+      "src": "/server.js",
+      "use": "@vercel/node",
+      "config": { "includeFiles": ["dist/**"] }
     }
   ],
-  "rewrites": [{ "source": "/(.*)", "destination": "/" }],
-
-  "buildCommand": "vite build --ssrManifest --outDir dist/client && vite build --ssr src/entry-server.jsx --outDir dist/server"
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/server.js"
+    },
+    {
+      "src": "/",
+      "dest": "/server.js"
+    }
+  ]
 }
