@@ -1,5 +1,7 @@
 {
   "version": 2,
+  "framework": "vite",
+  "outputDirectory": "dist",
   "builds": [
     {
       "src": "/server.js",
@@ -12,6 +14,12 @@
       "config": { "includeFiles": ["dist/client/**", "dist/server/**"] }
     }
   ],
+  "functions": {
+    "/server.js": {
+      "memory": 3009,
+      "maxDuration": 30
+    }
+  },
   "routes": [
     {
       "src": "/api/(.*)",
