@@ -5,6 +5,7 @@ import Events from "./pages/Events";
 import Footer from "./components/Footer";
 import Artworks from "./pages/Artworks";
 import Companies from "./pages/Companies";
+import EventDetails from "./pages/EventDetails";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/events" Component={Events} />
         <Route path="/artworks" Component={Artworks} />
         <Route path="/companies" Component={Companies} />
+        <Route path="/events/:eventId" Component={EventDetails} />
       </Routes>
       <Footer />
     </>
