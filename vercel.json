@@ -4,8 +4,8 @@
   "builds": [
     {
       "src": "package.json",
-      "use": "@vercel/static"
+      "use": "@vercel/static-build"
     }
   ],
-  "routes": [{ "src": "/.*", "dest": "/server.js" }]
+  "rewrites": [{ "source": "/(.*)", "destination": "/server.js" }]
 }
