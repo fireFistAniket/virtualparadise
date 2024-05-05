@@ -1,28 +1,11 @@
 {
   "version": 2,
-  "framework": "vite",
-  "outputDirectory": "dist",
   "builds": [
     {
-      "src": "/server.js",
-      "use": "@vercel/node",
-      "config": { "includeFiles": ["dist/**"] }
-    },
-    {
-      "src": "dist/*",
-      "use": "@vercel/static",
-      "config": { "includeFiles": ["dist/client/**", "dist/server/**"] }
+      "src": "server.js",
+      "use": "@vercel/node"
     }
   ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/server.js"
-    },
-    {
-      "src": "/",
-      "dest": "/server.js"
-    }
-  ],
+  "routes": [{ "src": "/(.*)", "dest": "/server.js" }],
   "buildCommand": "vite build --ssrManifest --outDir dist/client && vite build --ssr src/entry-server.jsx --outDir dist/server"
 }
