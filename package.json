@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon server",
-    "build": "vite build --ssrManifest --outDir dist/client && vite build --ssr src/entry-server.jsx --outDir dist/server",
+    "build": "shx mkdir -p dist && vite build --ssrManifest --outDir dist/client && vite build --ssr src/entry-server.jsx --outDir dist/server",
     "start": "cross-env NODE_ENV=production node server"
   },
   "dependencies": {
@@ -27,6 +27,7 @@
     "cross-env": "^7.0.3",
     "nodemon": "^3.1.0",
     "postcss": "^8.4.38",
+    "shx": "^0.3.4",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.4.5",
     "vite": "^5.2.10"
