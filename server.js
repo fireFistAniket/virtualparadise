@@ -89,8 +89,3 @@ app.listen(port, () => {
   console.log(`Server started at http://localhost:${port}`);
 });
 
-
-// export default (req, res) => {
-//   const server = app(VercelRequest, VercelResponse);
-//   return server;
-// };
