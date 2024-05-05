@@ -11,10 +11,10 @@ const base = process.env.BASE || "/";
 
 // Cached production assets
 const templateHtml = isProduction
-  ? await fs.readFile("./dist/client/index.html", "utf-8")
+  ? await fs.readFile("./client/index.html", "utf-8")
   : "";
 const ssrManifest = isProduction
-  ? await fs.readFile("./dist/client/.vite/ssr-manifest.json", "utf-8")
+  ? await fs.readFile("./client/.vite/ssr-manifest.json", "utf-8")
   : undefined;
 
 // Create http server
