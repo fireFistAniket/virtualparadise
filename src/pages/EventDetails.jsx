@@ -89,7 +89,8 @@ const EventDetails = () => {
           >
             {eventDetails.videos?.map((item) => (
               <ReactPlayer
-                url={`https://www.youtube.com/watch?v=${item.video_id}`}
+                key={item.id}
+                url={`${import.meta.env.VITE_YOUTUBE_URI}${item.video_id}`}
                 width={400}
                 height={250}
               />
