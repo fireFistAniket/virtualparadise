@@ -66,30 +66,23 @@ const Home = () => {
         </h1>
         <div className='flex items-center justify-center gap-[2vmax]'>
           <div className='max-w-[55vmax] text-[1.2vmax] text-neutral-100'>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
-              voluptas eligendi illo perspiciatis vero? Provident magni minus
-              labore placeat non quo nemo eaque delectus, suscipit error vitae
-              voluptate similique odit!
-            </p>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Voluptas, a dolorem. Reprehenderit ipsam praesentium dolor nihil?
-              Provident voluptatum magni deleniti temporibus impedit et velit
-              eligendi, aperiam aliquid cum deserunt facere.
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Reprehenderit omnis tempore esse neque repellat vero possimus
-              perspiciatis consequatur. At doloremque eum quia pariatur facilis
-              similique a commodi libero quis numquam. Quam error minima, ullam
-              impedit quidem laborum rerum, corporis voluptatum eum assumenda
-              expedita nisi recusandae? Ut amet, fugiat nostrum corrupti nulla
-              quod quisquam illum nam quos suscipit. Blanditiis, unde
-              recusandae! Tenetur ut ducimus, rem reiciendis maxime blanditiis
-              dicta molestiae, quos voluptatem at commodi odit necessitatibus
-              cumque. Quibusdam expedita, qui sequi maxime fuga ea sit vero
-              explicabo tempore ullam. Iure, consequuntur.
+            <p className='whitespace-pre-wrap'>
+              Welcome to VirtualParadise, the ultimate destination for virtual
+              gaming enthusiasts! Our website is dedicated to providing a vast
+              and diverse collection of virtual games, ensuring that there's
+              something for every type of gamer. Whether you're a fan of
+              heart-pounding action, brain-teasing puzzles, or immersive
+              simulations, you'll find it all here.&#10;&#10; At
+              VirtualParadise, we're more than just a database of games. We're a
+              passionate community of gamers who are dedicated to sharing our
+              love for virtual worlds with others. Our goal is to create a
+              welcoming and inclusive space where gamers can connect, discover
+              new games, and share their experiences.&#10;&#10; With
+              VirtualParadise, the possibilities are endless. Whether you're
+              looking for your next gaming obsession or simply want to explore
+              the vast world of virtual entertainment, we invite you to join us
+              on this exciting journey. So come on in, and let's start exploring
+              the virtual paradise together!
             </p>
           </div>
           <div>
@@ -193,10 +186,14 @@ const Home = () => {
         <div className='flex items-center justify-center'>
           <div className='flex flex-col items-center justify-center gap-[2vmin]'>
             <p className='text-[1.4vmax] font-medium text-neutral-100'>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex
-              molestiae provident vero culpa cum atque autem quod inventore
-              consequatur voluptatum libero, quisquam amet mollitia tenetur
-              cumque sequi! Eum, vero velit.
+              Mario is a beloved video game character created by Nintendo. He
+              first appeared in the arcade game Donkey Kong in 1981. Mario is
+              known for his iconic red cap, mustache, and overalls. He is a
+              plumber by trade but is often seen embarking on adventures to
+              rescue Princess Peach from the villain Bowser. Mario is known for
+              his jumping ability and has starred in numerous games across
+              various genres, becoming one of the most recognizable and enduring
+              characters in gaming history.
             </p>
             <img
               src={`${import.meta.env.VITE_IMAGE_URI}/iurhmhenrrsdnsc4zbva.png`}
@@ -209,16 +206,21 @@ const Home = () => {
           <div className='flex flex-col items-center justify-center gap-[2vmin]'>
             <img
               src={`${import.meta.env.VITE_IMAGE_URI}/bnzwhwclosyep4ligivs.png`}
-              alt='Lara Croft'
+              alt='Ezio Auditore'
               width={1920}
               height={1080}
               className='max-w-[12vmax]'
             />
             <p className='text-[1.4vmax] font-medium text-neutral-100'>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex
-              molestiae provident vero culpa cum atque autem quod inventore
-              consequatur voluptatum libero, quisquam amet mollitia tenetur
-              cumque sequi! Eum, vero velit.
+              Ezio Auditore da Firenze is a fictional character in the
+              Assassin&apos;s Creed video game series. He is an Italian nobleman
+              who becomes an Assassin after his family is betrayed and killed.
+              Known for his charisma and skill, Ezio is a master of stealth,
+              combat, and parkour. His story is set during the Italian
+              Renaissance, where he fights against the Templar Order.
+              Ezio&apos;s journey is marked by personal growth, from a young man
+              seeking revenge to a wise mentor guiding future generations of
+              Assassins.
             </p>
           </div>
         </div>
