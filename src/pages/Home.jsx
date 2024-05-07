@@ -5,6 +5,7 @@ import { GrLike } from "react-icons/gr";
 import Loader from "../components/Loader";
 import HomeRecentSlider from "../components/HomeRecentSlider";
 import useFetch from "../hooks/useFetch";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const {
@@ -13,7 +14,16 @@ const Home = () => {
     loading: recentGamesLoading,
   } = useFetch(
     `/api/games`,
-    "fields *, cover.*; where first_release_date >= 1640995200 & first_release_date < 1672531199;"
+    "fields *, cover.*; where first_release_date >= 1640995200 & first_release_date < 1672531199; limit 25;"
+  );
+
+  const {
+    data: popularGames,
+    error: popularGamesError,
+    loading: popularGamesLoading,
+  } = useFetch(
+    `/api/games`,
+    "fields *, cover.*; sort rating desc; where rating >= 70; limit 25;"
   );
 
   const {
@@ -141,7 +151,8 @@ const Home = () => {
             <Loader />
           ) : (
             mobaGames?.map((item, index) => (
-              <div
+              <Link
+                to={`/games/${item.id}`}
                 key={index}
                 className='rounded-xl overflow-hidden shadow-lg shadow-neutral-100 relative'
               >
@@ -157,7 +168,7 @@ const Home = () => {
                 <p className='absolute bottom-0 left-0 text-center text-[1.3vmax] text-neutral-100 font-medium w-full bg-black bg-opacity-40'>
                   {item.name}
                 </p>
-              </div>
+              </Link>
             ))
           )}
         </div>
@@ -230,6 +241,22 @@ const Home = () => {
         >
           watch upcoming games
         </button>
+      </div>
+      <div className='flex flex-col items-center justify-center gap-[1.8vmax]'>
+        <div className='flex flex-col items-center justify-center gap-[1vmax]'>
+          <h1 className='text-[2vmax] font-bold text-neutral-100'>
+            Popular games of all time
+          </h1>
+          <p className='text-[1vmax] text-neutral-100 font-semibold max-w-[50vmax] text-center'>
+            2023 is a year for game lovers, many launches &amp; events were
+            happend. Lets see some of games you might be not fimiliar with.
+          </p>
+        </div>
+        {popularGamesLoading ? (
+          <Loader />
+        ) : (
+          <HomeRecentSlider games={popularGames} />
+        )}
       </div>
     </main>
   );

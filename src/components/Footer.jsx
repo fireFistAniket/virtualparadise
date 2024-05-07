@@ -51,7 +51,7 @@ const Footer = () => {
           <Link to='/games'>games</Link>
         </li>
         <li className='capitalize text-[1.2vmax] font-medium text-neutral-100'>
-          blogs
+          <Link to='/franchise'>franchise</Link>
         </li>
         <li className='capitalize text-[1.2vmax] font-medium text-neutral-100'>
           news

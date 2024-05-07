@@ -50,7 +50,7 @@ const Games = () => {
                   src={`${import.meta.env.VITE_IMAGE_URI}/${
                     item.cover?.image_id
                   }.jpg`}
-                  alt='company-cover'
+                  alt='game-cover'
                   width={450}
                   height={175}
                   className='max-w-[15vmax]'

@@ -9,6 +9,7 @@ import EventDetails from "./pages/EventDetails";
 import CompanyDetails from "./pages/CompanyDetails";
 import Games from "./pages/Games";
 import GameDetails from "./pages/GameDetails";
+import Franchise from "./pages/Franchise";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path='/companies/:companyId' Component={CompanyDetails} />
         <Route path='/games' Component={Games} />
         <Route path='/games/:gameId' Component={GameDetails} />
+        <Route path='/franchise' Component={Franchise} />
       </Routes>
       <Footer />
     </>

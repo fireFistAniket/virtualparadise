@@ -62,7 +62,11 @@ const CompanyDetails = () => {
           className={`flex items-center gap-[2vmax] flex-wrap justify-between`}
         >
           {companyDetails?.published?.map((item) => (
-            <div key={item.id} className='flex flex-col items-center relative'>
+            <Link
+              to={`/games/${item.id}`}
+              key={item.id}
+              className='flex flex-col items-center relative'
+            >
               <img
                 src={`${import.meta.env.VITE_IMAGE_URI}/${
                   item.cover?.image_id
@@ -75,10 +79,14 @@ const CompanyDetails = () => {
               <p className='text-[1.5vmax] font-bold absolute bottom-0 bg-black bg-opacity-50 text-neutral-100 text-center w-full'>
                 {item.name}
               </p>
-            </div>
+            </Link>
           ))}
           {companyDetails?.developed?.map((item) => (
-            <div key={item.id} className='flex flex-col items-center relative'>
+            <Link
+              to={`/games/${item.id}`}
+              key={item.id}
+              className='flex flex-col items-center relative'
+            >
               <img
                 src={`${import.meta.env.VITE_IMAGE_URI}/${
                   item.cover?.image_id
@@ -91,7 +99,7 @@ const CompanyDetails = () => {
               <p className='text-[1.5vmax] font-bold absolute bottom-0 bg-black bg-opacity-50 text-neutral-100 text-center w-full'>
                 {item.name}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

@@ -26,24 +26,24 @@ const EventDetails = () => {
     return <Loader />;
   }
   return (
-    <main className="min-h-[80vmin] flex flex-col gap-[5vmin] my-[1.4vmin]">
-      <div className="flex items-center justify-center">
+    <main className='min-h-[80vmin] flex flex-col gap-[5vmin] my-[1.4vmin]'>
+      <div className='flex items-center justify-center'>
         <img
           src={`${import.meta.env.VITE_IMAGE_URI}/${
             eventDetails?.event_logo?.image_id
           }.jpg`}
-          alt="event_cover"
+          alt='event_cover'
           width={1920}
           height={1080}
-          className="max-h-[70vmin] w-full"
+          className='max-h-[70vmin] w-full'
         />
       </div>
-      <div className="mx-[3vmax] flex flex-col items-center gap-[3vmin]">
-        <div className="flex flex-col gap-[2vmin]">
-          <h1 className="text-neutral-100 text-[2.5vmax] font-bold">
+      <div className='mx-[3vmax] flex flex-col items-center gap-[3vmin]'>
+        <div className='flex flex-col gap-[2vmin]'>
+          <h1 className='text-neutral-100 text-[2.5vmax] font-bold'>
             {eventDetails.name}
           </h1>
-          <p className="text-neutral-100 text-[1.6vmax] font-medium">
+          <p className='text-neutral-100 text-[1.6vmax] font-medium'>
             {eventDetails.description}
           </p>
         </div>
@@ -52,36 +52,37 @@ const EventDetails = () => {
           width={800}
           height={600}
         />
-        <div className="flex flex-col items-start gap-[2vmin]">
-          <h2 className="text-[2vmax] text-neutral-100 font-semibold">
+        <div className='flex flex-col items-start gap-[2vmin]'>
+          <h2 className='text-[2vmax] text-neutral-100 font-semibold'>
             Launched Games at {eventDetails.name}
           </h2>
           <div
             className={`flex items-center gap-[2vmax] flex-wrap justify-between`}
           >
             {eventDetails?.games?.map((item) => (
-              <div
+              <Link
+                to={`/games/${item.id}`}
                 key={item.id}
-                className="flex flex-col items-center relative"
+                className='flex flex-col items-center relative'
               >
                 <img
                   src={`${import.meta.env.VITE_IMAGE_URI}/${
                     item.cover.image_id
                   }.jpg`}
-                  alt="game cover"
+                  alt='game cover'
                   width={400}
                   height={250}
-                  className="max-w-[15vmax]"
+                  className='max-w-[15vmax]'
                 />
-                <p className="text-[1.5vmax] font-bold absolute bottom-0 bg-black bg-opacity-50 text-neutral-100 text-center w-full">
+                <p className='text-[1.5vmax] font-bold absolute bottom-0 bg-black bg-opacity-50 text-neutral-100 text-center w-full'>
                   {item.name}
                 </p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
-        <div className="flex flex-col items-start gap-[2vmin]">
-          <h2 className="text-[2vmax] text-neutral-100 font-semibold">
+        <div className='flex flex-col items-start gap-[2vmin]'>
+          <h2 className='text-[2vmax] text-neutral-100 font-semibold'>
             Videos of {eventDetails.name}
           </h2>
           <div

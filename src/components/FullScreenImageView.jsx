@@ -15,9 +15,9 @@ const FullScreenImageView = ({ path, altName, close }) => {
         <img
           src={`${import.meta.env.VITE_IMAGE_URI}/${path}.jpg`}
           alt={altName}
-          width={1200}
-          height={700}
-          className='max-w-[40vmax]'
+          width={1920}
+          height={1080}
+          className='max-w-[60vmax]'
         />
       </div>
     </div>
