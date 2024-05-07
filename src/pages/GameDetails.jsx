@@ -156,7 +156,7 @@ const GameDetails = () => {
         <h2 className='text-neutral-100 text-[2vmax] font-semibold underline'>
           Supported Languages
         </h2>
-        <div className='flex items-center gap-[1.6vmax]'>
+        <div className='flex flex-wrap items-center gap-[1.6vmax]'>
           {gameDetails.language_supports?.map((item) => (
             <div key={item.id} className='flex items-end gap-2'>
               <h2 className='text-[1.8vmax] font-medium text-neutral-100'>
