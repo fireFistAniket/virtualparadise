@@ -5,6 +5,10 @@
 
 VirtualParadise is games information database, where user can explore any game's details, walkthrough, develop company.
 
+## Hosted URL
+
+ - [Host Link](https://virtualparadise-cit4.vercel.app/)
+
 
 ## Acknowledgements
 
