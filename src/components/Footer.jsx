@@ -54,7 +54,7 @@ const Footer = () => {
           <Link to='/franchise'>franchise</Link>
         </li>
         <li className='capitalize text-[1.2vmax] font-medium text-neutral-100'>
-          news
+          <Link to='/characters'>characters</Link>
         </li>
         <li className='capitalize text-[1.2vmax] font-medium text-neutral-100'>
           author
