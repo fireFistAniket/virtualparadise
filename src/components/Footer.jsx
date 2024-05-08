@@ -25,6 +25,14 @@ const Footer = () => {
           <h3 className='text-neutral-400 text-[1vmax]'>
             &#169; 2024 virtualparadise.com
           </h3>
+          <p className='text-neutral-400 text-[1vmax] max-w-[40vmax]'>
+            We would like to acknowledge the{" "}
+            <span className='underline font-bold'>IGDB API</span> for providing
+            valuable data that enhances the content and functionality of our
+            website. Their comprehensive database of video game information has
+            been instrumental in creating a richer user experience for our
+            visitors.
+          </p>
         </div>
         <div className='bg-blue-400 pl-2 rounded-md'>
           <input
