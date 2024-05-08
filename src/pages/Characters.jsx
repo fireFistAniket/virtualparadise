@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import useFetch from "../hooks/useFetch";
 import { Link } from "react-router-dom";
 import { BsArrowUpRightCircleFill } from "react-icons/bs";
+import Loader from "../components/Loader";
 
 const Characters = () => {
   const [offeset, setOffset] = useState(0);
@@ -58,7 +59,10 @@ const Characters = () => {
                       height={175}
                       className="max-w-[6vmax]"
                     />
-                    <h1 className="text-[1.2vmax] text-neutral-100 font-semibold line-clamp-1" title={it.name}>
+                    <h1
+                      className="text-[1.2vmax] text-neutral-100 font-semibold line-clamp-1"
+                      title={it.name}
+                    >
                       {it.name}
                     </h1>
                   </Link>
@@ -75,6 +79,7 @@ const Characters = () => {
           </div>
         ))}
       </div>
+      {charactersLoading && <Loader />}
       <button
         type="button"
         className="text-[1.2vmax] capitalize border shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_15px_#08f,0_0_30px_#08f] bg-blue-600 text-neutral-100 rounded-xl border-blue-600 px-[2vmax] py-[2vmin] self-center"
