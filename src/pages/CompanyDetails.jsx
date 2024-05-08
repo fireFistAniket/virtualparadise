@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import Loader from "../components/Loader";
+import Error from "../components/Error";
 
 const CompanyDetails = () => {
   const { companyId } = useParams();
@@ -23,6 +24,9 @@ const CompanyDetails = () => {
   if (companyLoading) {
     return <Loader />;
   }
+  if (companyError) {
+    return <Error />;
+  }
   return (
     <main className='min-h-[80vmin] flex flex-col gap-[5vmin] my-[1.4vmin]'>
       <div className='flex items-center justify-center'>
@@ -39,7 +43,7 @@ const CompanyDetails = () => {
       <div className='flex flex-col gap-[2vmin] mx-[3vmax]'>
         {companyDetails.websites ? (
           companyDetails?.websites.map((item) => (
-            <Link to={item.url} target='_blank' key={item.id}>
+            <Link to={item.url} target='_blank' referrerPolicy='no-referrer' key={item.id}>
               <h1 className='text-neutral-100 text-[2.5vmax] font-bold'>
                 {companyDetails.name}
               </h1>

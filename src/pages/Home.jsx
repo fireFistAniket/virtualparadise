@@ -75,7 +75,7 @@ const Home = () => {
           <span className='tracking-wider'>VirtualParadise</span>
         </h1>
         <div className='flex items-center justify-center gap-[2vmax]'>
-          <div className='max-w-[55vmax] text-[1.2vmax] text-neutral-100'>
+          <div className='max-w-[35vmax] md:max-w-[45vmax] xl:max-w-[55vmax] text-[1.2vmax] text-neutral-100'>
             <p className='whitespace-pre-wrap'>
               Welcome to VirtualParadise, the ultimate destination for virtual
               gaming enthusiasts! Our website is dedicated to providing a vast
@@ -101,7 +101,7 @@ const Home = () => {
               alt='about-us'
               width={600}
               height={400}
-              className='max-w-[45vmax]'
+              className='max-w-[25vmax] md:max-w-[35vmax] xl:max-w-[45vmax]'
             />
           </div>
         </div>
@@ -140,13 +140,13 @@ const Home = () => {
         </div>
         <button
           type='button'
-          className='text-[1.2vmax] capitalize border shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_15px_#08f,0_0_30px_#08f] bg-blue-600 text-neutral-100 rounded-xl border-blue-600 px-[2vmax] py-[2vmin]'
+          className='text-[1.2vmax] capitalize border hover:shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_15px_#08f,0_0_30px_#08f] transition duration-300 bg-blue-600 text-neutral-100 rounded-xl border-blue-600 px-[2vmax] py-[2vmin]'
         >
           watch our recommendation
         </button>
       </div>
-      <div className='flex mx-[3vmax] gap-[1.8vmax]'>
-        <div className='grid grid-cols-2 items-center justify-items-center gap-[5vmin]'>
+      <div className='flex flex-col items-center md:items-stretch md:flex-row mx-[3vmax] gap-[1.8vmax]'>
+        <div className='grid grid-cols-4 md:grid-cols-2 items-center justify-items-center gap-[5vmin]'>
           {mobaGamesLoading ? (
             <Loader />
           ) : (
@@ -172,7 +172,7 @@ const Home = () => {
             ))
           )}
         </div>
-        <div className='flex flex-col gap-[1.7vmax] items-start justify-around max-w-[50vmax]'>
+        <div className='flex flex-col gap-[1.7vmax] items-center md:items-start justify-around max-w-[50vmax]'>
           <h2 className='text-[2vmax] font-bold text-neutral-100'>
             A large number of games based on your perticular choice
           </h2>
@@ -182,12 +182,13 @@ const Home = () => {
             quo perferendis harum eum magni vero. Velit et molestiae dolores
             aliquid.
           </p>
-          <button
+          <Link
+            to='/genres'
             type='button'
-            className='text-[1.2vmax] capitalize border shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_15px_#08f,0_0_30px_#08f] bg-blue-600 text-neutral-100 rounded-xl border-blue-600 px-[2vmax] py-[2vmin]'
+            className='text-[1.2vmax] capitalize border hover:shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_15px_#08f,0_0_30px_#08f] transition duration-300 bg-blue-600 text-neutral-100 rounded-xl border-blue-600 px-[2vmax] py-[2vmin]'
           >
             check out all genres
-          </button>
+          </Link>
         </div>
       </div>
       <div className='flex flex-col items-center justify-center mx-[3vmax] gap-[1.8vmax]'>
@@ -237,7 +238,7 @@ const Home = () => {
         </div>
         <button
           type='button'
-          className='text-[1.2vmax] capitalize border shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_15px_#08f,0_0_30px_#08f] bg-blue-600 text-neutral-100 rounded-xl border-blue-600 px-[2vmax] py-[2vmin]'
+          className='text-[1.2vmax] capitalize border hover:shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_15px_#08f,0_0_30px_#08f] transition duration-300 bg-blue-600 text-neutral-100 rounded-xl border-blue-600 px-[2vmax] py-[2vmin]'
         >
           watch upcoming games
         </button>

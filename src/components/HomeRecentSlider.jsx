@@ -17,7 +17,7 @@ const HomeRecentSlider = ({ games }) => {
   };
   return (
     <div className=''>
-      <div className='flex items-center gap-[2vmax] overflow-hidden max-w-[85vmax] relative'>
+      <div className='flex items-center gap-[2vmax] overflow-hidden sm:max-w-[65vmax] lg:max-w-[85vmax] relative'>
         <div
           className={`flex items-center gap-[2vmax] transition duration-300`}
           style={{ transform: `translateX(-${translateX}%)` }}

@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import Loader from "../components/Loader";
 import ReactPlayer from "react-player/lazy";
+import Error from "../components/Error";
 
 const EventDetails = () => {
   const { eventId } = useParams();
@@ -24,6 +25,9 @@ const EventDetails = () => {
 
   if (eventsLoading) {
     return <Loader />;
+  }
+  if (eventsError) {
+    return <Error />;
   }
   return (
     <main className='min-h-[80vmin] flex flex-col gap-[5vmin] my-[1.4vmin]'>
@@ -52,52 +56,56 @@ const EventDetails = () => {
           width={800}
           height={600}
         />
-        <div className='flex flex-col items-start gap-[2vmin]'>
-          <h2 className='text-[2vmax] text-neutral-100 font-semibold'>
-            Launched Games at {eventDetails.name}
-          </h2>
-          <div
-            className={`flex items-center gap-[2vmax] flex-wrap justify-between`}
-          >
-            {eventDetails?.games?.map((item) => (
-              <Link
-                to={`/games/${item.id}`}
-                key={item.id}
-                className='flex flex-col items-center relative'
-              >
-                <img
-                  src={`${import.meta.env.VITE_IMAGE_URI}/${
-                    item.cover.image_id
-                  }.jpg`}
-                  alt='game cover'
+        {eventDetails?.games && (
+          <div className='flex flex-col items-start gap-[2vmin]'>
+            <h2 className='text-[2vmax] text-neutral-100 font-semibold'>
+              Launched Games at {eventDetails.name}
+            </h2>
+            <div
+              className={`flex items-center gap-[2vmax] flex-wrap justify-between`}
+            >
+              {eventDetails?.games?.map((item) => (
+                <Link
+                  to={`/games/${item.id}`}
+                  key={item.id}
+                  className='flex flex-col items-center relative'
+                >
+                  <img
+                    src={`${import.meta.env.VITE_IMAGE_URI}/${
+                      item.cover.image_id
+                    }.jpg`}
+                    alt='game cover'
+                    width={400}
+                    height={250}
+                    className='max-w-[15vmax]'
+                  />
+                  <p className='text-[1.5vmax] font-bold absolute bottom-0 bg-black bg-opacity-50 text-neutral-100 text-center w-full'>
+                    {item.name}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+        {eventDetails.videos && (
+          <div className='flex flex-col items-start gap-[2vmin]'>
+            <h2 className='text-[2vmax] text-neutral-100 font-semibold'>
+              Videos of {eventDetails.name}
+            </h2>
+            <div
+              className={`flex items-center gap-[2vmax] flex-wrap justify-between`}
+            >
+              {eventDetails.videos?.map((item) => (
+                <ReactPlayer
+                  key={item.id}
+                  url={`${import.meta.env.VITE_YOUTUBE_URI}${item.video_id}`}
                   width={400}
                   height={250}
-                  className='max-w-[15vmax]'
                 />
-                <p className='text-[1.5vmax] font-bold absolute bottom-0 bg-black bg-opacity-50 text-neutral-100 text-center w-full'>
-                  {item.name}
-                </p>
-              </Link>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-        <div className='flex flex-col items-start gap-[2vmin]'>
-          <h2 className='text-[2vmax] text-neutral-100 font-semibold'>
-            Videos of {eventDetails.name}
-          </h2>
-          <div
-            className={`flex items-center gap-[2vmax] flex-wrap justify-between`}
-          >
-            {eventDetails.videos?.map((item) => (
-              <ReactPlayer
-                key={item.id}
-                url={`${import.meta.env.VITE_YOUTUBE_URI}${item.video_id}`}
-                width={400}
-                height={250}
-              />
-            ))}
-          </div>
-        </div>
+        )}
       </div>
     </main>
   );
