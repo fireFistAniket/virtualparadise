@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className='flex flex-col gap-[4vmin] px-[3vmax] py-[3vmin] bg-[linear-gradient(270deg,_rgba(52,_7,_99,_1)_0%,_rgba(41,_38,_142,_1)_33%,_rgba(26,_17,_136,_1)_65%,_rgba(1,_61,_136,_1)_100%)]'>
-      <div className='flex items-center justify-between'>
+      <div className='flex md:items-center justify-between'>
         <div className='flex flex-col items-start gap-[2vmin]'>
           <Link
             to='/'
@@ -25,7 +25,7 @@ const Footer = () => {
           <h3 className='text-neutral-400 text-[1vmax]'>
             &#169; 2024 virtualparadise.com
           </h3>
-          <p className='text-neutral-400 text-[1vmax] max-w-[40vmax]'>
+          <p className='text-neutral-400 text-[1vmax] md:max-w-[40vmax]'>
             We would like to acknowledge the{" "}
             <span className='underline font-bold'>IGDB API</span> for providing
             valuable data that enhances the content and functionality of our
@@ -34,15 +34,15 @@ const Footer = () => {
             visitors.
           </p>
         </div>
-        <div className='bg-blue-400 pl-2 rounded-md'>
+        <div className='bg-blue-400 pl-2 rounded-md hidden md:block'>
           <input
             type='email'
             placeholder='Enter your email'
-            className='focus:outline-none placeholder:text-neutral-200 bg-transparent'
+            className='focus:outline-none placeholder:text-neutral-200 bg-transparent w-full md:w-auto'
           />
           <button
             type='button'
-            className='bg-blue-600 rounded-lg px-2 py-1 capitalize font-medium text-neutral-100'
+            className='bg-blue-600 rounded-lg px-2 py-1 capitalize font-medium text-neutral-100 whitespace-nowrap'
           >
             subscribe now
           </button>
@@ -57,9 +57,6 @@ const Footer = () => {
           >
             api home page
           </Link>
-        </li>
-        <li className='capitalize text-[1.2vmax] font-medium text-neutral-100'>
-          guide
         </li>
         <li className='capitalize text-[1.2vmax] font-medium text-neutral-100'>
           <Link to='/games'>games</Link>
@@ -104,6 +101,15 @@ const Footer = () => {
           <img
             src={`/pinterest-icon-footer.png`}
             alt='pinterest'
+            width={200}
+            height={50}
+            className='max-w-[3vmax]'
+          />
+        </li>
+        <li>
+          <img
+            src={`/upwork-icon-footer.png`}
+            alt='upwork'
             width={200}
             height={50}
             className='max-w-[3vmax]'

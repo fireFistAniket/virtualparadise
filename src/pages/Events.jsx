@@ -13,7 +13,7 @@ const Events = () => {
     loading: eventsLoading,
   } = useFetch(
     `/api/events`,
-    `fields *, games.*, videos.*, event_logo.*, games.cover.*; sort event_logo asc; limit 10; offset ${offeset};`
+    `fields *, games.*, videos.*, event_logo.*, games.cover.*; sort event_logo asc; sort start_time desc; limit 10; offset ${offeset};`
   );
   useEffect(() => {
     if (!data) {
@@ -43,15 +43,16 @@ const Events = () => {
           </Link>
         </div>
       </div>
+      <h1 className="text-center text-[2.7vmax] font-bold text-neutral-100">Witness The recent Game Launch events</h1>
       <div
-        className='flex items-center flex-wrap gap-[1.5vmax] justify-center'
+        className='flex flex-wrap gap-[1.5vmax] justify-around mx-[3vmax]'
         id='event-list'
       >
         {events?.map((item) => (
           <Link
             to={`/events/${item.id}`}
             key={item.id}
-            className='flex flex-col items-center mx-[3vmax]'
+            className='flex flex-shrink flex-grow basis-[25vmax] group relative'
           >
             <img
               src={`${import.meta.env.VITE_IMAGE_URI}/${
@@ -60,10 +61,13 @@ const Events = () => {
               alt='event-cover'
               width={450}
               height={175}
+              className='inline-block w-full h-auto rounded-lg object-cover'
             />
-            <h1 className='text-[1.7vmax] text-neutral-100 font-semibold'>
-              {item.name}
-            </h1>
+            <div className='absolute bottom-0 w-full py-[2vmin] bg-neutral-800 rounded-b-lg bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out'>
+              <h1 className='text-[1.7vmax] line-clamp-1 text-neutral-100 font-semibold text-center'>
+                {item.name}
+              </h1>
+            </div>
           </Link>
         ))}
       </div>

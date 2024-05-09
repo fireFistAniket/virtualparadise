@@ -39,7 +39,7 @@ const SearchResults = () => {
           <Link
             to={`/games/${item.game?.id}`}
             key={item.id}
-            className='flex flex-col items-center gap-[1vmax] max-w-[21vmax]'
+            className='flex cursor-pointer flex-shrink flex-grow basis-[20vmax] m-[3vmin] group relative'
           >
             <img
               src={`${import.meta.env.VITE_IMAGE_URI}/${
@@ -48,14 +48,16 @@ const SearchResults = () => {
               alt='game-cover'
               width={1920}
               height={1080}
-              className='max-w-[20vmax]'
+              className='inline-block w-full h-auto object-cover rounded-lg'
             />
-            <h1
-              className='text-[1.3vmax] text-neutral-100 font-semibold line-clamp-1'
-              title={item.game?.slug}
-            >
-              {item.game?.name}
-            </h1>
+            <div className='absolute bottom-0 w-full py-[2vmin] bg-neutral-800 rounded-b-lg bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out'>
+              <h1
+                className='text-[1.3vmax] text-neutral-100 font-semibold line-clamp-1 text-center'
+                title={item.game?.slug}
+              >
+                {item.game?.name}
+              </h1>
+            </div>
           </Link>
         ))}
       </div>

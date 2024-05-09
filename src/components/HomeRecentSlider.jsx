@@ -17,7 +17,7 @@ const HomeRecentSlider = ({ games }) => {
   };
   return (
     <div className=''>
-      <div className='flex items-center gap-[2vmax] overflow-hidden sm:max-w-[65vmax] lg:max-w-[85vmax] relative'>
+      <div className='flex items-center gap-[2vmax] overflow-hidden max-w-[65vmax] lg:max-w-[85vmax] relative'>
         <div
           className={`flex items-center gap-[2vmax] transition duration-300`}
           style={{ transform: `translateX(-${translateX}%)` }}
@@ -26,7 +26,7 @@ const HomeRecentSlider = ({ games }) => {
             <Link
               to={`/games/${item.id}`}
               key={index}
-              className='flex flex-col items-center relative'
+              className='flex items-stretch relative flex-shrink flex-grow basis-[15vmax] min-w-[15vmax]'
             >
               <img
                 src={`${import.meta.env.VITE_IMAGE_URI}/${
@@ -35,7 +35,7 @@ const HomeRecentSlider = ({ games }) => {
                 alt='game cover'
                 width={500}
                 height={500}
-                className='max-w-[15vmax]'
+                className='w-full h-auto inline-block rounded-lg'
               />
               <p className='text-[1.5vmax] font-bold absolute bottom-0 bg-black bg-opacity-50 text-neutral-100 text-center w-full'>
                 {item.name}
