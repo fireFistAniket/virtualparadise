@@ -36,7 +36,7 @@ const Artworks = () => {
     <>
       <TitleManager title={"VirtualParadise | Artworks"} />
       <main className='min-h-[80vmin] flex flex-col gap-[5vmin] my-[1.4vmin]'>
-        <div className="bg-[url('/artwork-bg.png')] bg-cover bg-center bg-no-repeat flex items-center justify-center min-h-[75vmin]">
+        <div className="bg-[url('/artwork-bg.png')] bg-cover bg-center bg-no-repeat flex items-center justify-center min-h-[45vmin] md:min-h-[75vmin]">
           <div className='flex flex-col items-center justify-center px-[1vmax] py-[1vmin] gap-[2vmax] bg-black bg-opacity-50 rounded-2xl backdrop-blur-md w-[60vmax] md:w-auto'>
             <h1 className='text-[2.5vmax] font-bold text-neutral-100'>
               VirtualParadise Artworks

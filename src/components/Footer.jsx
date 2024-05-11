@@ -79,7 +79,7 @@ const Footer = () => {
             contact
           </Link>
         </li>
-        <li>
+        <li className="hidden md:list-item">
           <img
             src={`/instagram-icon-footer.png`}
             alt='intagram'
@@ -88,7 +88,7 @@ const Footer = () => {
             className='max-w-[3vmax]'
           />
         </li>
-        <li>
+        <li className="hidden md:list-item">
           <img
             src={`/linkedin-icon-footer.png`}
             alt='linkedin'
@@ -97,7 +97,7 @@ const Footer = () => {
             className='max-w-[3vmax]'
           />
         </li>
-        <li>
+        <li className="hidden md:list-item">
           <img
             src={`/pinterest-icon-footer.png`}
             alt='pinterest'
@@ -106,7 +106,7 @@ const Footer = () => {
             className='max-w-[3vmax]'
           />
         </li>
-        <li>
+        <li className="hidden md:list-item">
           <img
             src={`/upwork-icon-footer.png`}
             alt='upwork'
@@ -115,7 +115,7 @@ const Footer = () => {
             className='max-w-[3vmax]'
           />
         </li>
-        <li>
+        <li className="hidden md:list-item">
           <img
             src={`/english-icon-footer.png`}
             alt='english'

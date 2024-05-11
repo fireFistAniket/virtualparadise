@@ -30,7 +30,7 @@ const Characters = () => {
     <>
       <TitleManager title={"VirtualParadise | Characters"} />
       <main className='min-h-[80vmin] flex flex-col gap-[5vmin] my-[1.4vmin]'>
-        <div className="bg-[url('/characters-bg.jpeg')] bg-cover bg-center bg-no-repeat flex items-center justify-center min-h-[50vmin]"></div>
+        <div className="bg-[url('/characters-bg.jpeg')] bg-cover bg-center bg-no-repeat flex items-center justify-center min-h-[45vmin] md:min-h-[50vmin]"></div>
         <div className='flex items-center flex-wrap justify-between gap-[1.8vmax] mx-[3vmax]'>
           {characters.map((item) => (
             <div

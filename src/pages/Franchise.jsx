@@ -4,6 +4,7 @@ import Loader from "../components/Loader";
 import { Link } from "react-router-dom";
 import { BsArrowUpRightCircleFill } from "react-icons/bs";
 import Error from "../components/Error";
+import TitleManager from "../components/TitleManager";
 
 const Franchise = () => {
   const [offeset, setOffset] = useState(0);
@@ -26,6 +27,8 @@ const Franchise = () => {
     return <Error />;
   }
   return (
+    <>
+    <TitleManager title={`VirtualParadise | Franchises`} />
     <main className='min-h-[80vmin] flex flex-col gap-[5vmin] my-[1.4vmin]'>
       <div className="bg-[url('/franchise-bg.png')] bg-cover bg-center bg-no-repeat flex items-center justify-center min-h-[50vmin]"></div>
       <div className='flex items-center justify-center'>
@@ -89,6 +92,7 @@ const Franchise = () => {
         view more
       </button>
     </main>
+    </>
   );
 };
 

@@ -3,6 +3,7 @@ import useFetch from "../hooks/useFetch";
 import Loader from "../components/Loader";
 import { Link } from "react-router-dom";
 import Error from "../components/Error";
+import TitleManager from "../components/TitleManager";
 
 const Games = () => {
   const [offeset, setOffset] = useState(0);
@@ -30,8 +31,10 @@ const Games = () => {
     return <Error />;
   }
   return (
+    <>
+    <TitleManager title={`VirtualParadise | Games`} />
     <main className='min-h-[80vmin] flex flex-col gap-[5vmin] my-[1.4vmin]'>
-      <div className="bg-[url('/games-bg.png')] bg-cover bg-center bg-no-repeat flex items-center justify-center min-h-[70vmin]">
+      <div className="bg-[url('/games-bg.png')] bg-cover bg-center bg-no-repeat flex items-center justify-center min-h-[45vmin] md:min-h-[70vmin]">
         <div className='flex flex-col items-center justify-center px-[1vmax] py-[1vmin] gap-[2vmax] bg-black bg-opacity-50 rounded-2xl backdrop-blur-md'>
           <h2 className='text-[2vmax] font-semibold text-neutral-100'>
             Discover the World of Electronic Games with Us
@@ -82,6 +85,7 @@ const Games = () => {
         </button>
       </div>
     </main>
+    </>
   );
 };
 
