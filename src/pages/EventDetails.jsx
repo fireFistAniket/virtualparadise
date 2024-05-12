@@ -44,10 +44,10 @@ const EventDetails = () => {
             alt="event_cover"
             width={1920}
             height={1080}
-            className="max-h-[70vmin] w-full"
+            className="max-h-[70vmin] w-full object-cover"
           />
         </div>
-        <div className="mx-[3vmax] flex flex-col items-center gap-[3vmin]">
+        <div className="mx-[3vmax] flex flex-col items-stretch gap-[3vmin]">
           <div className="flex flex-col gap-[2vmin]">
             <h1 className="text-neutral-100 text-[2.5vmax] font-bold">
               {eventDetails.name}
@@ -60,6 +60,7 @@ const EventDetails = () => {
             url={eventDetails.live_stream_url}
             width={800}
             height={600}
+            className="max-w-[60vmax] max-h-[45vmin]"
           />
           {eventDetails?.games && (
             <div className="flex flex-col items-start gap-[2vmin]">
@@ -106,6 +107,7 @@ const EventDetails = () => {
                     url={`${import.meta.env.VITE_YOUTUBE_URI}${item.video_id}`}
                     width={400}
                     height={250}
+                    className="max-w-[60vmax] max-h-[45vmin]"
                   />
                 ))}
               </div>

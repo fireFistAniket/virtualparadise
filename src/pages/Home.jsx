@@ -48,7 +48,7 @@ const Home = () => {
             <h2 className="text-[2vmax] font-semibold text-neutral-100">
               Your all gaming information at 1 place
             </h2>
-            <p className="text-[1.7vmax] font-medium text-neutral-100 max-w-[55vmax] text-center">
+            <p className="text-[1.7vmax] font-medium text-neutral-100 max-w-[40vmax] sm:max-w-[55vmax] text-center">
               Here you can expect any information related virtual games. Eg:
               game characters, game&apos;s age ratings, released date, upcoming
               event details &amp; much more. Explore the website and dive deeper
@@ -77,7 +77,7 @@ const Home = () => {
             About Us- What&apos;s{" "}
             <span className="tracking-wider">VirtualParadise</span>
           </h1>
-          <div className="flex items-center justify-center gap-[2vmax]">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-[2vmax]">
             <div className="max-w-[35vmax] md:max-w-[45vmax] xl:max-w-[55vmax] text-[1.2vmax] text-neutral-100">
               <p className="whitespace-pre-wrap">
                 Welcome to VirtualParadise, the ultimate destination for virtual
@@ -199,7 +199,7 @@ const Home = () => {
           <h1 className="text-[2vmax] font-bold text-neutral-100">
             Games which you might get interest
           </h1>
-          <div className="flex items-center justify-center">
+          <div className="flex flex-col sm:flex-row items-center justify-center">
             <div className="flex flex-col items-center justify-center gap-[2vmin]">
               <p className="text-[1.4vmax] font-medium text-neutral-100">
                 Mario is a beloved video game character created by Nintendo. He
@@ -221,7 +221,7 @@ const Home = () => {
                 className="max-w-[12vmax]"
               />
             </div>
-            <div className="flex flex-col items-center justify-center gap-[2vmin]">
+            <div className="flex flex-col-reverse sm:flex-col items-center justify-center gap-[2vmin]">
               <img
                 src={`${
                   import.meta.env.VITE_IMAGE_URI

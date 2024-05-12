@@ -144,7 +144,9 @@ const Navbar = () => {
           </button>
         </div>
         <ul className="flex flex-col items-start gap-[1.9vmax]">
-          <h1 className="text-neutral-100 text-[2vmax] font-medium">Useful Routes</h1>
+          <h1 className="text-neutral-100 text-[2vmax] font-medium underline">
+            Useful Routes
+          </h1>
           <li className="text-[1.8vmax] font-semibold text-neutral-100 capitalize">
             <Link to="/artworks">artworks</Link>
           </li>
@@ -153,6 +155,15 @@ const Navbar = () => {
           </li>
           <li className="text-[1.8vmax] font-semibold text-neutral-100 capitalize">
             <Link to="/events">events</Link>
+          </li>
+          <li className="text-[1.8vmax] font-semibold text-neutral-100 capitalize">
+            <Link to="/games">all games</Link>
+          </li>
+          <li className="text-[1.8vmax] font-semibold text-neutral-100 capitalize">
+            <Link to="/franchise">franchises</Link>
+          </li>
+          <li className="text-[1.8vmax] font-semibold text-neutral-100 capitalize">
+            <Link to="/genres">genres</Link>
           </li>
         </ul>
         <hr className="w-full bg-neutral-600 border-neutral-600" />

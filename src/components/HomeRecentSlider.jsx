@@ -16,8 +16,8 @@ const HomeRecentSlider = ({ games }) => {
     }
   };
   return (
-    <div className=''>
-      <div className='flex items-center gap-[2vmax] overflow-hidden max-w-[65vmax] lg:max-w-[85vmax] relative'>
+    <div className="">
+      <div className="flex items-center gap-[2vmax] overflow-hidden no-scrollbar overflow-x-scroll max-w-[45vmax] sm:max-w-[65vmax] lg:max-w-[85vmax] relative">
         <div
           className={`flex items-center gap-[2vmax] transition duration-300`}
           style={{ transform: `translateX(-${translateX}%)` }}
@@ -26,18 +26,18 @@ const HomeRecentSlider = ({ games }) => {
             <Link
               to={`/games/${item.id}`}
               key={index}
-              className='flex items-stretch relative flex-shrink flex-grow basis-[15vmax] min-w-[15vmax]'
+              className="flex items-stretch relative flex-shrink flex-grow basis-[15vmax] min-w-[15vmax]"
             >
               <img
                 src={`${import.meta.env.VITE_IMAGE_URI}/${
                   item.cover?.image_id
                 }.jpg`}
-                alt='game cover'
+                alt="game cover"
                 width={500}
                 height={500}
-                className='w-full h-auto inline-block rounded-lg'
+                className="w-full h-auto inline-block rounded-lg"
               />
-              <p className='text-[1.5vmax] font-bold absolute bottom-0 bg-black bg-opacity-50 text-neutral-100 text-center w-full'>
+              <p className="text-[1.5vmax] font-bold absolute bottom-0 bg-black bg-opacity-50 text-neutral-100 text-center w-full">
                 {item.name}
               </p>
             </Link>
@@ -45,17 +45,17 @@ const HomeRecentSlider = ({ games }) => {
         </div>
         <button
           onClick={() => handelTransition("left")}
-          className='text-[4vmax] text-neutral-100 bg-black bg-opacity-60 h-full absolute top-0 left-0'
-          type='button'
+          className="text-[4vmax] text-neutral-100 bg-black bg-opacity-60 h-full absolute top-0 left-0 hidden md:inline-block"
+          type="button"
         >
-          <FaChevronLeft className='opacity-60 hover:opacity-100' />
+          <FaChevronLeft className="opacity-60 hover:opacity-100" />
         </button>
         <button
           onClick={() => handelTransition("right")}
-          className='text-[4vmax] text-neutral-100 bg-black bg-opacity-60 h-full absolute top-0 right-0'
-          type='button'
+          className="text-[4vmax] text-neutral-100 bg-black bg-opacity-60 h-full absolute top-0 right-0 hidden md:inline-block"
+          type="button"
         >
-          <FaChevronRight className='opacity-60 hover:opacity-100' />
+          <FaChevronRight className="opacity-60 hover:opacity-100" />
         </button>
       </div>
     </div>
