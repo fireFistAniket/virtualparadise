@@ -30,11 +30,11 @@ const Companies = () => {
       <TitleManager title={"VirtualParadise | Companies"} />
       <main className="min-h-[80vmin] flex flex-col gap-[5vmin] my-[1.4vmin]">
         <div className="bg-[url('/companies-header-bg.png')] bg-cover bg-center bg-no-repeat flex items-center justify-center min-h-[45vmin] md:min-h-[70vmin]">
-          <div className="flex flex-col items-center justify-center px-[1vmax] py-[1vmin] gap-[2vmax] bg-black bg-opacity-50 rounded-2xl backdrop-blur-md">
+          <div className="flex flex-col items-center justify-center px-[1vmax] py-[1vmin] gap-[2vmax] bg-black bg-opacity-50 rounded-2xl backdrop-blur-md my-[1.4vmax] sm:my-0 mx-[1.8vmax] sm:mx-0">
             <h2 className="text-[2vmax] font-semibold text-neutral-100">
               About Our Game Development Studio
             </h2>
-            <p className="text-[1.7vmax] font-medium text-neutral-100 max-w-[60vmax] text-center">
+            <p className="text-[1.7vmax] font-medium text-neutral-100 sm:max-w-[60vmax] text-center">
               We are a passionate game development studio dedicated to creating
               immersive and unforgettable gaming experiences. With a focus on
               innovation and storytelling, we strive to push the boundaries of

@@ -37,14 +37,14 @@ const Artworks = () => {
       <TitleManager title={"VirtualParadise | Artworks"} />
       <main className='min-h-[80vmin] flex flex-col gap-[5vmin] my-[1.4vmin]'>
         <div className="bg-[url('/artwork-bg.png')] bg-cover bg-center bg-no-repeat flex items-center justify-center min-h-[45vmin] md:min-h-[75vmin]">
-          <div className='flex flex-col items-center justify-center px-[1vmax] py-[1vmin] gap-[2vmax] bg-black bg-opacity-50 rounded-2xl backdrop-blur-md w-[60vmax] md:w-auto'>
+          <div className='flex flex-col items-center justify-center px-[1vmax] py-[1vmin] gap-[2vmax] bg-black bg-opacity-50 rounded-2xl backdrop-blur-md w-[40vmax] sm:w-[60vmax] md:w-auto my-[1.4vmax] sm:my-0'>
             <h1 className='text-[2.5vmax] font-bold text-neutral-100'>
               VirtualParadise Artworks
             </h1>
-            <h2 className='text-[2vmax] font-semibold text-neutral-100'>
+            <h2 className='text-[2vmax] font-semibold text-neutral-100 text-center'>
               Discover the Art of Gaming: Explore Stunning Game Artworks
             </h2>
-            <p className='text-[1.7vmax] font-medium text-neutral-100 max-w-[70vmax] text-center'>
+            <p className='text-[1.7vmax] font-medium text-neutral-100 sm:max-w-[70vmax] text-center'>
               Explore captivating game artworks that bring virtual worlds to
               life. Immerse yourself in stunning visuals that capture the
               essence of each game, from epic landscapes to intricate character

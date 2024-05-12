@@ -48,7 +48,7 @@ const GameDetails = () => {
               alt="company_cover"
               width={1920}
               height={1080}
-              className="max-h-[70vmin] w-full object-contain"
+              className="sm:max-h-[70vmin] w-full object-contain"
             />
             {gameDetails?.rating && (
               <div className="bg-neutral-900 bg-opacity-60 px-[1.4vmin] py-[1vmin] rounded-lg absolute top-0 right-0">
@@ -59,7 +59,7 @@ const GameDetails = () => {
               </div>
             )}
           </div>
-          <div className="flex flex-col items-start gap-[2vmin] mx-[3vmax]">
+          <div className="hidden sm:flex flex-col items-start gap-[2vmin] mx-[3vmax]">
             {gameDetails.websites ? (
               gameDetails?.websites?.slice(0, 1).map((item) => (
                 <Link
@@ -83,7 +83,7 @@ const GameDetails = () => {
             </p>
           </div>
         </div>
-        {/* <div className="flex flex-col items-start gap-[2vmin] mx-[3vmax]">
+        <div className="flex sm:hidden flex-col items-start gap-[2vmin] mx-[3vmax]">
         {gameDetails.websites ? (
           gameDetails?.websites?.slice(0, 1).map((item) => (
             <Link
@@ -105,13 +105,13 @@ const GameDetails = () => {
         <p className="text-neutral-100 text-[1.6vmax] font-medium">
           {gameDetails.description || gameDetails.summary}
         </p>
-      </div> */}
+      </div>
         {gameDetails.screenshots && (
           <div className="flex flex-col items-start gap-[2vmin] mx-[3vmax]">
             <h2 className="text-neutral-100 text-[2vmax] font-semibold underline">
               Gameplay Images
             </h2>
-            <div className="flex flex-wrap items-center justify-between gap-[3vmin]">
+            <div className="flex flex-wrap items-center justify-center sm:justify-between gap-[3vmin]">
               {gameDetails.screenshots?.map((item) => (
                 <div
                   key={item.id}
@@ -129,7 +129,7 @@ const GameDetails = () => {
                     alt="company_cover"
                     width={1920}
                     height={1080}
-                    className="max-w-[30vmax]"
+                    className="max-w-[40vmax] sm:max-w-[30vmax]"
                   />
                 </div>
               ))}
@@ -141,14 +141,14 @@ const GameDetails = () => {
             <h2 className="text-neutral-100 text-[2vmax] font-semibold underline">
               Game Videos
             </h2>
-            <div className="flex flex-wrap items-center justify-between gap-[3vmin]">
+            <div className="flex flex-wrap items-center justify-center sm:justify-between gap-[3vmin]">
               {gameDetails.videos?.map((item) => (
                 <ReactPlayer
                   key={item.id}
                   url={`${import.meta.env.VITE_YOUTUBE_URI}${item.video_id}`}
                   width={640}
                   height={360}
-                  className="w-[30vmax]"
+                  className="max-w-[40vmax] max-h-[45vmin]"
                 />
               ))}
             </div>

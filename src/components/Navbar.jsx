@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
-import { IoClose } from "react-icons/io5";
+import { IoClose, IoSearchOutline } from "react-icons/io5";
 import { RiMenu3Fill } from "react-icons/ri";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
@@ -8,16 +8,17 @@ const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResult, setSearchResult] = useState([]);
   const [showSideNav, setShowSideNav] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
-  const handelSearch = async (searchParam) => {
+  const handelSearch = async (searchParam, limit) => {
     try {
       const resp = await fetch("/api/search", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          query: `fields *, character.*, collection.*, company.*, game.*, game.cover.*; search "${searchParam}"; limit 5;`,
+          query: `fields *, character.*, collection.*, company.*, game.*, game.cover.*; search *"${searchParam}"*; limit ${limit};`,
         }),
       });
       const rest = await resp.json();
@@ -29,6 +30,8 @@ const Navbar = () => {
 
   useEffect(() => {
     setShowSideNav(false);
+    setShowSearch(false);
+    setSearchQuery("");
   }, [location]);
 
   return (
@@ -40,9 +43,9 @@ const Navbar = () => {
           src={`/logo.png`}
           alt="logo"
           loading="lazy"
-          className="max-w-[5vmax]"
+          className="max-w-[4vmax] sm:max-w-[5vmax]"
         />
-        <h1 className="text-[2.2vmax] font-bold text-neutral-100">
+        <h1 className="text-[1.6vmax] sm:text-[2.2vmax] font-bold text-neutral-100">
           VirtualParadise
         </h1>
       </Link>
@@ -66,7 +69,7 @@ const Navbar = () => {
             value={searchQuery}
             onChange={(e) => {
               setSearchQuery(e.target.value);
-              handelSearch(e.target.value);
+              handelSearch(e.target.value, 5);
             }}
           />
           <button
@@ -109,13 +112,91 @@ const Navbar = () => {
           </div>
         )}
       </div>
-      <button
-        onClick={() => setShowSideNav(true)}
-        type="button"
-        className="md:hidden text-neutral-100 text-[3vmax] border border-neutral-100 rounded-md p-[1vmin]"
+      <div className="flex md:hidden items-center gap-[0.8vmax]">
+        <button
+          onClick={() => setShowSearch(true)}
+          type="button"
+          className="md:hidden text-neutral-100 text-[2.4vmax] border border-neutral-100 rounded-md p-[1vmin]"
+        >
+          <IoSearchOutline />
+        </button>
+        <button
+          onClick={() => setShowSideNav(true)}
+          type="button"
+          className="md:hidden text-neutral-100 text-[2.4vmax] border border-neutral-100 rounded-md p-[1vmin]"
+        >
+          <RiMenu3Fill />
+        </button>
+      </div>
+      <div
+        className={`fixed top-0 left-0 w-full bg-[linear-gradient(180deg,_rgba(52,_7,_99,_1)_0%,_rgba(41,_38,_142,_1)_33%,_rgba(26,_17,_136,_1)_65%,_rgba(1,_61,_136,_1)_100%)] h-full z-[1100] p-[2vmax] flex flex-col gap-[3vmax] transition duration-500 ease-in-out ${
+          showSearch ? "translate-y-0" : "translate-y-full"
+        }`}
       >
-        <RiMenu3Fill />
-      </button>
+        <div className="relative">
+          <div className="flex items-center w-full justify-between gap-[1.1vmax] border-b border-neutral-500">
+            <input
+              type="search"
+              placeholder="What are you looking for?"
+              className="placeholder:text-neutral-300 w-full bg-transparent px-[1vmax] py-[1vmin] placeholder:overflow-visible text-neutral-300 focus:outline-none min-w-[20vmax]"
+              value={searchQuery}
+              onChange={(e) => {
+                setSearchQuery(e.target.value);
+                handelSearch(e.target.value, 10);
+              }}
+            />
+            {searchQuery.length > 0 ? (
+              <button
+                type="button"
+                className="text-[2.5vmax] text-neutral-500"
+                onClick={() => {
+                  navigate(`/search?q=${searchQuery}`);
+                  setSearchQuery("");
+                  setSearchResult([]);
+                  setShowSearch(false);
+                }}
+              >
+                <FaSearch />
+              </button>
+            ) : (
+              <button
+                type="button"
+                onClick={() => setShowSearch(false)}
+                className="text-[3vmax] text-neutral-100"
+              >
+                <IoClose />
+              </button>
+            )}
+          </div>
+          {searchResult.length > 0 && (
+            <div className="flex flex-col gap-[1.5vmax] absolute top-full left-0 px-[1.5vmin] py-[1vmin] bg-black bg-opacity-50 rounded-lg rounded-tr-none z-50 backdrop-blur w-full">
+              {searchResult?.map((item) => (
+                <Link
+                  to={`/games/${item.game?.id}`}
+                  key={item.id}
+                  className="flex items-center gap-[1vmax] even:bg-neutral-500 p-[1vmin]"
+                >
+                  <img
+                    src={`${import.meta.env.VITE_IMAGE_URI}/${
+                      item.game?.cover?.image_id
+                    }.jpg`}
+                    alt="game-cover"
+                    width={450}
+                    height={175}
+                    className="max-w-[6vmax] rounded-full max-h-[6vmax]"
+                  />
+                  <h1
+                    className="text-[1.8vmax] text-neutral-100 font-semibold line-clamp-1"
+                    title={item.game?.slug}
+                  >
+                    {item.game?.name}
+                  </h1>
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
       <div
         className={`fixed top-0 left-0 w-full bg-[linear-gradient(180deg,_rgba(52,_7,_99,_1)_0%,_rgba(41,_38,_142,_1)_33%,_rgba(26,_17,_136,_1)_65%,_rgba(1,_61,_136,_1)_100%)] h-full z-[1100] p-[2vmax] flex flex-col gap-[3vmax] transition duration-500 ease-in-out ${
           showSideNav ? "translate-x-0" : "translate-x-full"

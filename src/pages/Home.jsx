@@ -41,7 +41,7 @@ const Home = () => {
       <TitleManager title={"VirtualParadise"} />
       <main className="flex flex-col items-center justify-center gap-[5vmax] my-[2vmin]">
         <div className="bg-[url('/header-bg.png')] bg-cover bg-no-repeat bg-center min-h-[45vmin] md:min-h-[70vmin] flex items-center justify-center w-full">
-          <div className="flex flex-col items-center justify-center px-[1vmax] py-[1vmin] gap-[2vmax] bg-black bg-opacity-20 rounded-2xl backdrop-blur-md">
+          <div className="flex flex-col items-center justify-center px-[1vmax] py-[1vmin] gap-[2vmax] bg-black bg-opacity-20 rounded-2xl backdrop-blur-md my-[2vmax] sm:my-0">
             <h1 className="text-[2.5vmax] font-bold text-neutral-100">
               VirtualParadise
             </h1>
@@ -56,7 +56,7 @@ const Home = () => {
             </p>
           </div>
         </div>
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center gap-[1.8vmax] mx-[3vmax]">
           <div className="flex flex-col items-center justify-center gap-[1vmax]">
             <h1 className="text-[2vmax] font-bold text-neutral-100">
               Games which are launched last year
@@ -251,7 +251,7 @@ const Home = () => {
             watch upcoming games
           </button>
         </div>
-        <div className="flex flex-col items-center justify-center gap-[1.8vmax]">
+        <div className="flex flex-col items-center justify-center gap-[1.8vmax] mx-[3vmax]">
           <div className="flex flex-col items-center justify-center gap-[1vmax]">
             <h1 className="text-[2vmax] font-bold text-neutral-100">
               Popular games of all time
