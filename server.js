@@ -2,12 +2,17 @@ import dotenv from "dotenv";
 import fs from "node:fs/promises";
 import express from "express";
 import request from "request";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 dotenv.config();
 // Constants
 const isProduction = process.env.NODE_ENV === "production";
 const port = process.env.PORT || 5173;
 const base = process.env.BASE || "/";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Cached production assets
 const templateHtml = isProduction
@@ -52,6 +57,17 @@ app.use("/api/:prefix", async (req, res) => {
     },
     body: req.body.query, // Assuming you send the query from your client
   }).pipe(res); // Pipe the IGDB response back to the client
+});
+
+app.use("/service-worker.js", (req, res) => {
+  let fileDir;
+  if (!isProduction) {
+    fileDir = "public";
+  } else {
+    fileDir = "./dist/server";
+  }
+  res.setHeader("Content-Type", "application/javascript");
+  res.sendFile(path.join(__dirname, fileDir, "serviceWorker.js"));
 });
 
 // Serve HTML
