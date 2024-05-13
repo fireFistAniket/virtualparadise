@@ -35,8 +35,8 @@ const Games = () => {
     <TitleManager title={`VirtualParadise | Games`} />
     <main className='min-h-[80vmin] flex flex-col gap-[5vmin] my-[1.4vmin]'>
       <div className="bg-[url('/games-bg.png')] bg-cover bg-center bg-no-repeat flex items-center justify-center min-h-[45vmin] md:min-h-[70vmin]">
-        <div className='flex flex-col items-center justify-center px-[1vmax] py-[1vmin] gap-[2vmax] bg-black bg-opacity-50 rounded-2xl backdrop-blur-md'>
-          <h2 className='text-[2vmax] font-semibold text-neutral-100'>
+        <div className='flex flex-col items-center justify-center px-[1vmax] py-[1vmin] gap-[2vmax] bg-black bg-opacity-50 rounded-2xl backdrop-blur-md mx-[3vmax] sm:mx-0 my-[3vmin] sm:my-0'>
+          <h2 className='text-[2vmax] font-semibold text-neutral-100 text-center'>
             Discover the World of Electronic Games with Us
           </h2>
           <p className='text-[1.7vmax] font-medium text-neutral-100 max-w-[60vmax] text-center'>
@@ -48,7 +48,7 @@ const Games = () => {
         </div>
       </div>
       <div className='flex flex-col items-center justify-center gap-[5vmin] mx-[3vmax]'>
-        <h1 className='text-[2.5vmax] font-bold text-neutral-100'>
+        <h1 className='text-[2.5vmax] font-bold text-neutral-100 text-center'>
           Meet the games, which gives us the most relaxation.
         </h1>
         <div className='flex items-center flex-wrap gap-[1.5vmax] justify-center'>

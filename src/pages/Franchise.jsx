@@ -32,7 +32,7 @@ const Franchise = () => {
     <main className='min-h-[80vmin] flex flex-col gap-[5vmin] my-[1.4vmin]'>
       <div className="bg-[url('/franchise-bg.png')] bg-cover bg-center bg-no-repeat flex items-center justify-center min-h-[50vmin]"></div>
       <div className='flex items-center justify-center'>
-        <h1 className='text-[2.5vmax] font-bold text-neutral-100'>
+        <h1 className='text-[2.5vmax] font-bold text-neutral-100 text-center'>
           Meet the game franchises, which is still popular till now.
         </h1>
       </div>

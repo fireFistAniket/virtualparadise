@@ -9,7 +9,7 @@ const Error = () => {
         alt="error"
         width={650}
         height={400}
-        className="max-w-[50vmax]"
+        className="max-w-[40vmax] sm:max-w-[50vmax]"
       />
       <Link
         to="/"

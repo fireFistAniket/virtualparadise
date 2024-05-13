@@ -190,7 +190,7 @@ const GameDetails = () => {
             <h2 className="text-neutral-100 text-[2vmax] font-semibold underline">
               Artworks
             </h2>
-            <div className="flex flex-wrap items-center justify-between gap-[3vmin]">
+            <div className="flex flex-wrap items-center justify-center sm:justify-between gap-[3vmin]">
               {gameDetails.artworks?.map((item) => (
                 <div
                   key={item.id}
@@ -208,7 +208,7 @@ const GameDetails = () => {
                     alt="company_cover"
                     width={1920}
                     height={1080}
-                    className="max-w-[30vmax]"
+                    className="max-w-[40vmax] sm:max-w-[30vmax]"
                   />
                 </div>
               ))}
