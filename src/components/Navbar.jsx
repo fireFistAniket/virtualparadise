@@ -65,7 +65,7 @@ const Navbar = () => {
           <input
             type='search'
             placeholder='What are you looking for?'
-            className='placeholder:text-neutral-300 bg-transparent px-[1vmax] py-[1vmin] placeholder:overflow-visible text-neutral-300 focus:outline-none min-w-[20vmax]'
+            className='placeholder:text-neutral-300 bg-transparent px-[1vmax] py-[1vmin] placeholder:overflow-visible text-neutral-300 focus:outline-none min-w-[20vmax] placeholder:text-[1.7vmin]'
             value={searchQuery}
             onKeyDown={(e) => {
               if (e.key === "Enter" && e.target.value !== "") {
