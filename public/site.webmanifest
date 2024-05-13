@@ -5,6 +5,9 @@
   "display": "standalone",
   "theme_color": "#ffffff",
   "background_color": "#ffffff",
+  "scope": "/",
+  "orientation": "portrait",
+  "description": "Explore VirtualParadise, your ultimate destination for discovering and exploring a vast collection of games.",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",

@@ -14,40 +14,25 @@ import Characters from "./pages/Characters";
 import Genres from "./pages/Genres";
 import Not_Found from "./pages/Not_Found";
 import SearchResults from "./pages/SearchResults";
-import { useEffect } from "react";
 
 function App() {
-  useEffect(() => {
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", () => {
-        navigator.serviceWorker
-          .register("/service-worker.js")
-          .then((registration) => {
-            console.log("Service worker registered:", registration);
-          })
-          .catch((error) => {
-            console.error("Service worker registration failed:", error);
-          });
-      });
-    }
-  }, []);
   return (
     <>
       <Navbar />
       <Routes>
-        <Route index path="/" Component={Home} />
-        <Route path="/events" Component={Events} />
-        <Route path="/artworks" Component={Artworks} />
-        <Route path="/companies" Component={Companies} />
-        <Route path="/events/:eventId" Component={EventDetails} />
-        <Route path="/companies/:companyId" Component={CompanyDetails} />
-        <Route path="/games" Component={Games} />
-        <Route path="/games/:gameId" Component={GameDetails} />
-        <Route path="/franchise" Component={Franchise} />
-        <Route path="/characters" Component={Characters} />
-        <Route path="/genres" Component={Genres} />
-        <Route path="/search" Component={SearchResults} />
-        <Route path="*" Component={Not_Found} />
+        <Route index path='/' Component={Home} />
+        <Route path='/events' Component={Events} />
+        <Route path='/artworks' Component={Artworks} />
+        <Route path='/companies' Component={Companies} />
+        <Route path='/events/:eventId' Component={EventDetails} />
+        <Route path='/companies/:companyId' Component={CompanyDetails} />
+        <Route path='/games' Component={Games} />
+        <Route path='/games/:gameId' Component={GameDetails} />
+        <Route path='/franchise' Component={Franchise} />
+        <Route path='/characters' Component={Characters} />
+        <Route path='/genres' Component={Genres} />
+        <Route path='/search' Component={SearchResults} />
+        <Route path='*' Component={Not_Found} />
       </Routes>
       <Footer />
     </>

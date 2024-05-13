@@ -59,16 +59,6 @@ app.use("/api/:prefix", async (req, res) => {
   }).pipe(res); // Pipe the IGDB response back to the client
 });
 
-app.use("/service-worker.js", (req, res) => {
-  let fileDir;
-  if (!isProduction) {
-    fileDir = "public";
-  } else {
-    fileDir = "./dist/server";
-  }
-  res.setHeader("Content-Type", "application/javascript");
-  res.sendFile(path.join(__dirname, fileDir, "serviceWorker.js"));
-});
 
 // Serve HTML
 app.use("*", async (req, res) => {
