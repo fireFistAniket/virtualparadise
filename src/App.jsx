@@ -14,29 +14,8 @@ import Characters from "./pages/Characters";
 import Genres from "./pages/Genres";
 import Not_Found from "./pages/Not_Found";
 import SearchResults from "./pages/SearchResults";
-import { useEffect } from "react";
-import { pwaTrackingListeners } from "./utils/pwaEventListeners";
 
 function App() {
-  const isBrowser = typeof window !== "undefined";
-  useEffect(() => {
-    if (isBrowser) {
-      pwaTrackingListeners();
-    }
-
-    if (isBrowser && "serviceWorker" in navigator) {
-      window.addEventListener("load", () => {
-        navigator.serviceWorker
-          .register("/serviceWorker.js")
-          .then(() => {
-            console.log("Service worker registered");
-          })
-          .catch((err) => {
-            console.log("Service worker registration failed", err);
-          });
-      });
-    }
-  }, [isBrowser]);
 
   return (
     <>
