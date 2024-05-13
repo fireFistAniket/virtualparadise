@@ -67,6 +67,13 @@ const Navbar = () => {
             placeholder='What are you looking for?'
             className='placeholder:text-neutral-300 bg-transparent px-[1vmax] py-[1vmin] placeholder:overflow-visible text-neutral-300 focus:outline-none min-w-[20vmax]'
             value={searchQuery}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" && e.target.value !== "") {
+                navigate(`/search?q=${searchQuery}`);
+                setSearchQuery("");
+                setSearchResult([]);
+              }
+            }}
             onChange={(e) => {
               setSearchQuery(e.target.value);
               handelSearch(e.target.value, 5);
@@ -140,6 +147,13 @@ const Navbar = () => {
               placeholder='What are you looking for?'
               className='placeholder:text-neutral-300 w-full bg-transparent px-[1vmax] py-[1vmin] placeholder:overflow-visible text-neutral-300 focus:outline-none min-w-[20vmax]'
               value={searchQuery}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && e.target.value !== "") {
+                  navigate(`/search?q=${searchQuery}`);
+                  setSearchQuery("");
+                  setSearchResult([]);
+                }
+              }}
               onChange={(e) => {
                 setSearchQuery(e.target.value);
                 handelSearch(e.target.value, 10);
