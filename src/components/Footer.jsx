@@ -142,7 +142,14 @@ const Footer = () => {
       </footer>
       <h1 className="bg-white text-neutral-900 text-center font-medium text-[1.4vmax]">
         Design &amp; Developed by{" "}
-        <span className="font-bold">Code N Creativity</span>
+        <Link
+          to="https://codencreativity-o4ek.vercel.app/"
+          target="_blank"
+          referrerPolicy="no-referrer"
+          className="font-bold"
+        >
+          Code N Creativity
+        </Link>
       </h1>
     </>
   );
